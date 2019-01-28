@@ -4,3 +4,4 @@ vendor
 node_modules
 composer.json
 composer.lock
+resources/sass/base/_variables.scss

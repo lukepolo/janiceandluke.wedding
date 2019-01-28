@@ -3,40 +3,40 @@
 
 // BASE COLORS
 // NOTE: do not use these outside of _variables
-$green: #87c38f;
-$orange: #ffbc42;
-$red: #e86262;
-$blue-lightest: #447f9e;
-$blue-light: #175c81;
-$blue-dark: #09496b;
-$blue-darkest: #033049;
+$green:                         #87c38f;
+$orange:                        #ffbc42;
+$red:                           #e86262;
+$blue-lightest:                 #447f9e;
+$blue-light:                    #175c81;
+$blue-dark:                     #09496b;
+$blue-darkest:                  #033049;
 
-$white: #ffffff;
-$black: #000000;
-$gray-dark: #2f3735;
-$gray-medium: #4f5350;
-$gray: #9f9f9d;
-$gray-light: #cbcdcd;
-$gray-xlight: #eeefef;
+$white:                         #ffffff;
+$black:                         #000000;
+$gray-dark:                     #2f3735;
+$gray-medium:                   #4f5350;
+$gray:                          #9f9f9d;
+$gray-light:                    #cbcdcd;
+$gray-xlight:                   #eeefef;
 
 // COLOR DECLARATIONS
 // NOTE: use these for application variables
-$color-background: $white;
-$color-background-content: $gray-xlight;
+$color-background:              $white;
+$color-background-content:      $gray-xlight;
 
-$color-text-primary: $gray-dark;
-$color-text-secondary: $gray;
-$color-text-inverse-primary: $white;
-$color-text-inverse-secondary: $gray-light;
+$color-text-primary:            $gray-dark;
+$color-text-secondary:          $gray;
+$color-text-inverse-primary:    $white;
+$color-text-inverse-secondary:  $gray-light;
 
-$color-link: $blue-lightest;
-$color-link-hover: $blue-light;
+$color-link:                    $blue-lightest;
+$color-link-hover:              $blue-light;
 
-$color-state-primary: $blue-lightest;
-$color-state-success: $green;
-$color-state-warning: $orange;
-$color-state-danger: $red;
-$color-state-neutral: $gray;
+$color-state-primary:           $blue-lightest;
+$color-state-success:           $green;
+$color-state-warning:           $orange;
+$color-state-danger:            $red;
+$color-state-neutral:           $gray;
 
 $states: (
   primary: $color-state-primary,
@@ -46,14 +46,15 @@ $states: (
   neutral: $color-state-neutral,
 );
 
-$color-accent-lightest: $blue-lightest;
-$color-accent-light: $blue-light;
-$color-accent-dark: $blue-dark;
-$color-accent-darkest: $blue-darkest;
+$color-accent-lightest:         $blue-lightest;
+$color-accent-light:            $blue-light;
+$color-accent-dark:             $blue-dark;
+$color-accent-darkest:          $blue-darkest;
 
-$color-divider: mix($gray-medium, $white, 20%);
-$color-divider-inverse: mix($gray-dark, $white, 90%);
+$color-divider:                 mix($gray-medium, $white, 20%);
+$color-divider-inverse:         mix($gray-dark, $white, 90%);
+
 // FONT DECLARATIONS
-$font-body: "Aleo";
-$font-heading: "Lilypaly";
-$font-icon: "icomoon";
+$font-body:                     "Aleo";
+$font-heading:                  "Lilypaly";
+$font-icon:                     "icomoon";

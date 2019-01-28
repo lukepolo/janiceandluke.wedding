@@ -8,7 +8,7 @@
   border-radius: 6px;
   padding: 15px 25px;
   transform: scale(1);
-  transition: all 0.3s ease;
+  transition: all .3s ease;
 
   &:active,
   &:focus,
@@ -18,16 +18,16 @@
     color: $color-hover;
     border-color: $color-hover;
     transform: scale(1.05);
-    transition: all 0.3s ease;
+    transition: all .3s ease;
 
     &:after {
       height: 10px;
-      transition: all 0.3s ease;
+      transition: all .3s ease;
     }
   }
 
   &:after {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     right: 0;
@@ -36,26 +36,17 @@
     background-color: $color;
     border-radius: 0 0 4px 4px;
     height: 0;
-    transition: all 0.3s ease;
+    transition: all .3s ease;
   }
 }
-
-// TODO: this works
-$color-hover: mix($color-link-hover, $black, 80%);
 
 .btn {
   @include button-outline($color-link, $color-link-hover);
 
-  // TODO: this works
-  //@include button-outline($color-link, mix($color-link-hover, $black, 80%));
-
   // Add styles for all color variations in $states
   @each $state, $color in $states {
     &-#{$state} {
-      // TODO: this DOESN'T work
-      //@include button-outline($color, mix($color, $black, 80%));
-
-      @include button-outline($color, $color);
+      @include button-outline($color, mix($color, $black, 80%));
     }
   }
 }
