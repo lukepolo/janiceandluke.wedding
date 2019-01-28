@@ -39,28 +39,28 @@
 
       <div class="photos--grid">
         <div class="photos--item">
-          <img src="/resources/img/engagement_7.jpg" />
+          <img src="./../resources/img/engagement_7.jpg" />
         </div>
         <div class="photos--item">
-          <img src="/resources/img/engagement_6.jpg" />
+          <img src="./../resources/img/engagement_6.jpg" />
         </div>
         <div class="photos--item">
-          <img src="/resources/img/engagement_1.jpg" />
+          <img src="./../resources/img/engagement_1.jpg" />
         </div>
         <div class="photos--item">
-          <img src="/resources/img/engagement_2.jpg" />
+          <img src="./../resources/img/engagement_2.jpg" />
         </div>
         <div class="photos--item">
-          <img src="/resources/img/engagement_2.jpg" />
+          <img src="./../resources/img/engagement_2.jpg" />
         </div>
         <div class="photos--item">
-          <img src="/resources/img/engagement_5.jpg" />
+          <img src="./../resources/img/engagement_5.jpg" />
         </div>
         <div class="photos--item">
-          <img src="/resources/img/engagement_3.jpg" />
+          <img src="./../resources/img/engagement_3.jpg" />
         </div>
         <div class="photos--item">
-          <img src="/resources/img/engagement_4.jpg" />
+          <img src="./../resources/img/engagement_4.jpg" />
         </div>
       </div>
     </div>
@@ -98,7 +98,7 @@
         <h1 class="secondary"></h1>
 
         <div class="travel--img">
-          <img src="/resources/img/oakwood2.jpg" />
+          <img src="./../resources/img/oakwood2.jpg" />
           <div class="travel--img-text">
             <h3 class="primary" style="margin-bottom: -35px;">
               Oakwood Re<span class="left-s">s</span>or<span class="left-t"
