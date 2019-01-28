@@ -39,11 +39,11 @@ $color-state-danger: $red;
 $color-state-neutral: $gray;
 
 $states: (
-    primary: ($color-state-primary,),
-    success: ($color-state-success,),
-    warning: ($color-state-warning,),
-    danger: ($color-state-danger,),
-    neutral: ($color-state-neutral,),
+    primary: $color-state-primary,
+    success: $color-state-success,
+    warning: $color-state-warning,
+    danger: $color-state-danger,
+    neutral: $color-state-neutral,
 );
 
 $color-accent-lightest: $blue-lightest;
