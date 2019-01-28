@@ -47,16 +47,19 @@ p {
   line-height: 1.4em;
 }
 
-hr {}
+hr {
+}
 
-pre {}
+pre {
+}
 
-small {}
+small {
+}
 
 .muted {
   font-weight: 300;
   color: $color-text-secondary;
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 .text {
@@ -80,7 +83,8 @@ small {}
     color: $color-link;
   }
 
-  &-badge {}
+  &-badge {
+  }
 
   &-uppercase {
     text-transform: uppercase;
@@ -188,17 +192,23 @@ a {
 
 // LISTS ---------------------------------------------------
 // ---------------------------------------------------------
-ul {}
+ul {
+}
 
-li {}
+li {
+}
 
 // TABLES --------------------------------------------------
 // ---------------------------------------------------------
-table {}
+table {
+}
 
-th {}
+th {
+}
 
 td,
-th {}
+th {
+}
 
-tr {}
+tr {
+}
