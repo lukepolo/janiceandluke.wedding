@@ -1,21 +1,28 @@
 // LAYOUT ==================================================
 // =========================================================
 
-body {
+#app {
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  grid-template-areas: 'nav' 'content';
+}
+
+#content {
+  grid-area: content;
   display: grid;
   grid-auto-rows: min-content;
-  grid-template-areas: "nav nav nav" "header header info" "photos photos photos" "wedding wedding travel" "registry registry registry" "footer footer footer";
+  grid-template-areas: 'header header info' 'photos photos photos' 'wedding wedding travel' 'registry registry registry' 'footer footer footer';
 
   @include breakpoint(mxl) {
-    grid-template-areas: "nav nav" "header info" "photos photos" "wedding rsvp" "map travel" "registry registry" "footer footer";
+    grid-template-areas: 'header info' 'photos photos' 'wedding rsvp' 'map travel' 'registry registry' 'footer footer';
   }
 
   @include breakpoint(sm) {
-    grid-template-areas: "nav" "header" "info" "photos" "wedding" "rsvp" "travel" "map" "registry" "footer";
+    grid-template-areas: 'header' 'info' 'photos' 'wedding' 'rsvp' 'travel' 'map' 'registry' 'footer';
   }
 
   &.rsvp-page {
-    grid-template-areas: "nav" "content" "footer";
+    grid-template-areas: 'content' 'footer';
     grid-template-rows: min-content auto min-content;
   }
 }
