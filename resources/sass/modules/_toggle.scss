@@ -1,0 +1,59 @@
+// TOGGLE STYLES ===========================================
+// =========================================================
+.toggle {
+  display: flex;
+
+  &--item {
+    flex: 1 1 1em;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    + .toggle--item {
+      label {
+        border-left-width: 0;
+      }
+    }
+  }
+
+  label {
+    flex: 1 1 auto;
+    border: 4px solid $color-accent-lightest;
+    color: $color-link;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 20px;
+    user-select: none;
+    transform: scale(1);
+    transition: all 0.3s ease;
+    position: relative;
+
+    &:hover {
+      cursor: pointer;
+      background-color: mix($white, $color-accent-lightest, 90%);
+      transform: scale(1.1);
+      transition: all 0.3s ease;
+      z-index: 2;
+      border-left-width: 4px;
+    }
+  }
+
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+
+    &:checked {
+      + label {
+        background-color: $color-accent-dark;
+        color: $color-text-inverse-primary;
+        transform: scale(1.05);
+        transition: all 0.3s ease;
+        z-index: 2;
+        border-left-width: 4px;
+      }
+    }
+  }
+}

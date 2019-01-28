@@ -1,0 +1,26 @@
+// GRADIENT ================================================
+// =========================================================
+.gradient {
+  display: flex;
+
+  &-box {
+    flex: 1 1 1em;
+    min-height: 30px;
+
+    &-lightest {
+      background-color: $color-accent-lightest;
+    }
+
+    &-light {
+      background-color: $color-accent-light;
+    }
+
+    &-dark {
+      background-color: $color-accent-dark;
+    }
+
+    &-darkest {
+      background-color: $color-accent-darkest;
+    }
+  }
+}

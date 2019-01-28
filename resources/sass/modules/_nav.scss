@@ -1,0 +1,86 @@
+// NAVIGATION ==============================================
+// =========================================================
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+  background-color: $color-background;
+  color: $color-text-primary;
+  font-weight: 300;
+  padding: 0 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  &--left {
+    flex: 0 0 auto;
+    font-weight: 600;
+    padding: 15px;
+  }
+
+  &--right {
+    flex: 0 1 auto;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+
+  &--item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: $color-text-secondary;
+    padding: 15px;
+    position: relative;
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 0;
+      background-color: $color-accent-light;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      color: $color-text-primary;
+      cursor: pointer;
+
+      &:after {
+        height: 4px;
+        opacity: 1;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}
+@include breakpoint(sm) {
+  .nav {
+    padding: 0;
+
+    &--left {
+      flex-basis: 100%;
+      text-align: center;
+    }
+
+    &--right {
+      flex: 1 1 auto;
+      justify-content: space-around;
+    }
+
+    &--item {
+      padding: 0 5px 15px;
+    }
+  }
+
+  .header {
+    padding: 20px 15px;
+  }
+}

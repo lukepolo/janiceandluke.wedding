@@ -1,0 +1,213 @@
+// BASE STYLES =============================================
+// =========================================================
+@import "base/normalize";
+@import "base/variables";
+@import "base/mixins";
+
+// BASICS --------------------------------------------------
+// ---------------------------------------------------------
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  min-height: 100vh;
+}
+
+body {
+  font-family: $font-body;
+  font-weight: 300;
+  font-size: 20px;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+.hide {
+  display: none;
+
+  &-small {
+    @include breakpoint(sm) {
+      display: none;
+    }
+  }
+}
+
+// TEXT ----------------------------------------------------
+// ---------------------------------------------------------
+span {
+  display: inline-block;
+}
+
+p {
+  line-height: 1.4em;
+}
+
+hr {
+}
+
+pre {
+}
+
+small {
+}
+
+.muted {
+  font-weight: 300;
+  color: $color-text-secondary;
+  font-size: 0.9em;
+}
+
+.text {
+  &-center {
+    text-align: center;
+  }
+
+  &-left {
+    text-align: left;
+  }
+
+  &-right {
+    text-align: right;
+  }
+
+  &-error {
+    color: $red;
+  }
+
+  &-primary {
+    color: $color-link;
+  }
+
+  &-badge {
+  }
+
+  &-uppercase {
+    text-transform: uppercase;
+  }
+}
+
+// Spacing Fixes for Script Font
+h1 {
+  .left {
+    &-t {
+      left: 17px;
+    }
+
+    &-e {
+      left: 2px;
+    }
+
+    &-o {
+      left: 2px;
+    }
+
+    &-m {
+      left: 1px;
+    }
+
+    &-ex {
+      left: -15px;
+    }
+  }
+}
+
+h3 {
+  .left {
+    &-t {
+      left: 10px;
+    }
+
+    &-s {
+      left: 6px;
+    }
+  }
+}
+
+// HEADINGS ------------------------------------------------
+// ---------------------------------------------------------
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &.primary {
+    font-family: $font-heading;
+
+    span {
+      position: relative;
+    }
+  }
+
+  &.secondary {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+}
+
+.primary + .secondary {
+  margin-top: -55px;
+}
+
+// Fix for Mobile Script Heading
+@include breakpoint(530px) {
+  .header h1.primary {
+    margin-top: -35px;
+  }
+}
+
+// Fix for Mobile Script Heading
+.break-space {
+  display: none;
+  @include breakpoint(530px) {
+    display: block;
+    margin-top: -55px;
+  }
+}
+
+// LINKS ---------------------------------------------------
+// ---------------------------------------------------------
+a {
+  color: $color-link;
+  letter-spacing: 2px;
+  text-decoration: none;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $color-link-hover;
+    text-decoration: underline;
+  }
+}
+
+.a-inverse {
+  color: mix($color-text-inverse-primary, $color-link, 60%);
+}
+
+// LISTS ---------------------------------------------------
+// ---------------------------------------------------------
+ul {
+}
+
+li {
+}
+
+// TABLES --------------------------------------------------
+// ---------------------------------------------------------
+table {
+}
+
+th {
+}
+
+td,
+th {
+}
+
+tr {
+}

@@ -1,0 +1,49 @@
+// PHOTO GRID ==============================================
+// =========================================================
+.photos {
+  display: grid;
+  grid-template-rows: 30px auto 30px;
+
+  &--grid {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 2;
+    grid-row-end: -2;
+    column-count: 4;
+    column-gap: 0;
+  }
+
+  &--item {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  img {
+    padding: 0 20px 20px;
+  }
+
+  // Placing the Gradient correctly under photos
+  .gradient {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: -1;
+  }
+}
+
+.photos {
+  &--grid {
+    @include breakpoint(lg) {
+      column-count: 3;
+    }
+
+    @include breakpoint(md) {
+      column-count: 2;
+    }
+
+    @include breakpoint(xs) {
+      column-count: 1;
+    }
+  }
+}

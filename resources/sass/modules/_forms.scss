@@ -1,0 +1,185 @@
+// FORM STYLES =============================================
+// =========================================================
+$spacing: 20px;
+$flyform-background: transparent;
+$flyform-color: $color-text-primary;
+$flyform-font-size: 20px;
+$flyform-spacing: $spacing;
+$flyform-color-divider: $color-divider;
+$flyform-transition: all 0.5s;
+
+.flyform--group {
+  margin: $flyform-spacing 0 $flyform-spacing * 2;
+  padding: $flyform-spacing * 1.2 0 0;
+  position: relative;
+
+  + .flyform--footer {
+    margin-top: $spacing * 2;
+  }
+
+  + [class^="grid-"],
+  + [class*=" grid-"] {
+    margin-top: -$spacing;
+  }
+
+  label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-weight: 400;
+    text-align: left;
+    color: mix($color-accent-lightest, $white, 30%);
+    letter-spacing: 0.4px;
+    pointer-events: none;
+    transition: $flyform-transition;
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      width: 0;
+      background-color: $color-accent-lightest;
+      transition: $flyform-transition;
+    }
+  }
+
+  input {
+    width: 100%;
+    background-color: $flyform-background;
+    color: $flyform-color;
+    font-size: $flyform-font-size;
+    border: 1px solid $flyform-color-divider;
+    border-top: none;
+    padding: $flyform-spacing/4 $flyform-spacing/2;
+
+    &:focus {
+      box-shadow: none;
+      outline: none;
+
+      + label {
+        color: $color-accent-lightest;
+
+        &:after {
+          width: 100%;
+          transition: $flyform-transition;
+        }
+      }
+    }
+
+    // placeholder required for float label to work
+    &:placeholder-shown:not(:focus) + * {
+      font-size: $flyform-font-size;
+      top: $flyform-spacing * 1.5 - 1px;
+      padding-left: $flyform-spacing/2;
+      font-weight: 300;
+      letter-spacing: 0;
+      color: mix($white, $black, 60%);
+      transition: $flyform-transition;
+
+      // when there is an info icon before the input label
+      .flyform--group-iconlabel {
+        padding-left: 0;
+        transition: $flyform-transition;
+      }
+
+      // Validation error
+      &.validation-error {
+        color: $color-state-danger;
+        font-size: 13px;
+        letter-spacing: 0.5px;
+        padding: 5px 10px 0;
+      }
+    }
+  }
+
+  &-nomargin {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  // PREFIXED INPUTS ----------------------------------------
+  &-prefix {
+    display: flex;
+    align-items: baseline;
+    border-bottom: 1px solid $flyform-color-divider;
+    white-space: nowrap;
+
+    &-label {
+      flex: 0 0 auto;
+      color: rgba($color-text-primary, 0.6);
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      padding-right: $spacing/2;
+    }
+
+    input {
+      order: 2;
+      border-bottom: none;
+
+      + label + .flyform--group-prefix-label {
+        flex: 0 0 auto;
+        min-width: 1px;
+        text-align: right;
+        opacity: 1;
+        padding-right: $spacing/2;
+        transition: $flyform-transition;
+      }
+
+      &:placeholder-shown:not(:focus) {
+        + label + .flyform--group-prefix-label {
+          flex: 0 1 0;
+          min-width: 0;
+          padding: 0;
+          overflow: hidden;
+          opacity: 0;
+          transition: $flyform-transition;
+        }
+      }
+    }
+  }
+
+  // PREFIXED INPUTS ----------------------------------------
+  &-postfix {
+    @extend .flyform--group-prefix;
+
+    input {
+      order: inherit;
+    }
+
+    &-label,
+    .flyform--group-prefix-label {
+      padding: 0 $spacing/2;
+    }
+  }
+
+  // INPUT HELP STYLES ----------------------------------------
+  [class*=" hint-"]:not(.flyform--btn-right):not(.tooltip-in-form),
+  [class^="hint-"]:not(.flyform--btn-right):not(.tooltip-in-form) {
+    position: absolute;
+    top: 0;
+
+    + input + label {
+      padding-left: $flyform-spacing;
+    }
+  }
+
+  // when there is an info icon before the input label
+  &-iconlabel {
+    padding-left: $flyform-spacing;
+    transition: $flyform-transition;
+  }
+
+  // buttons near inputs
+  .flyform--btn-right {
+    padding-top: 6px;
+    padding-left: $spacing/2;
+  }
+}
+
+.flyform--btns {
+  margin-top: 60px;
+}
