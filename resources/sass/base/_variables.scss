@@ -39,11 +39,11 @@ $color-state-danger: $red;
 $color-state-neutral: $gray;
 
 $states: (
-    primary: $color-state-primary,
-    success: $color-state-success,
-    warning: $color-state-warning,
-    danger: $color-state-danger,
-    neutral: $color-state-neutral,
+  primary: $color-state-primary,
+  success: $color-state-success,
+  warning: $color-state-warning,
+  danger: $color-state-danger,
+  neutral: $color-state-neutral,
 );
 
 $color-accent-lightest: $blue-lightest;
@@ -53,8 +53,7 @@ $color-accent-darkest: $blue-darkest;
 
 $color-divider: mix($gray-medium, $white, 20%);
 $color-divider-inverse: mix($gray-dark, $white, 90%);
-
 // FONT DECLARATIONS
-$font-body: 'Aleo';
-$font-heading: 'Lilypaly';
-$font-icon: 'icomoon';
+$font-body: "Aleo";
+$font-heading: "Lilypaly";
+$font-icon: "icomoon";
