@@ -54,7 +54,7 @@
             "vendor/bin/php-cs-fixer fix"
         ],
         "format": [
-          "STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACMRTUXB | grep '\\.php$') && ([  -z \"$STAGED_FILES\" ] && (vendor/bin/php-cs-fixer fix -- $(echo $STAGED_FILES) && git add $(echo $STAGED_FILES)))"
+          "STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACMRTUXB | grep '\\.php$') && ([  -z \"$STAGED_FILES\" ] && (vendor/bin/php-cs-fixer fix -- $(echo $STAGED_FILES) && git add $(echo $STAGED_FILES))) || echo 'test'"
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
