@@ -5,74 +5,42 @@
 // ---------------------------------
 @font-face {
   font-family: "Aleo";
-  src: url("/assets/fonts/Aleo-Light-webfont.eot");
-  src: url("/assets/fonts/Aleo-Light-webfont.eot?#iefix")
-      format("embedded-opentype"),
-    url("/assets/fonts/Aleo-Light-webfont.woff") format("woff"),
-    url("/assets/fonts/Aleo-Light-webfont.ttf") format("truetype"),
-    url("/assets/fonts/Aleo-Light-webfont.svg#aleolight") format("svg");
+  src: url("./../../fonts/Aleo-Light-webfont.woff") format("woff");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Aleo";
-  src: url("/assets/fonts/Aleo-LightItalic-webfont.eot");
-  src: url("/assets/fonts/Aleo-LightItalic-webfont.eot?#iefix")
-      format("embedded-opentype"),
-    url("/assets/fonts/Aleo-LightItalic-webfont.woff") format("woff"),
-    url("/assets/fonts/Aleo-LightItalic-webfont.ttf") format("truetype"),
-    url("/assets/fonts/Aleo-LightItalic-webfont.svg#aleolightitalic")
-      format("svg");
+  src: url("./../../fonts/Aleo-LightItalic-webfont.woff") format("woff");
   font-weight: 300;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Aleo";
-  src: url("/assets/fonts/Aleo-Regular-webfont.eot");
-  src: url("/assets/fonts/Aleo-Regular-webfont.eot?#iefix")
-      format("embedded-opentype"),
-    url("/assets/fonts/Aleo-Regular-webfont.woff") format("woff"),
-    url("/assets/fonts/Aleo-Regular-webfont.ttf") format("truetype"),
-    url("/assets/fonts/Aleo-Regular-webfont.svg#aleoregular") format("svg");
+  src: url("./../../fonts/Aleo-Regular-webfont.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Aleo";
-  src: url("/assets/fonts/Aleo-Italic-webfont.eot");
-  src: url("/assets/fonts/Aleo-Italic-webfont.eot?#iefix")
-      format("embedded-opentype"),
-    url("/assets/fonts/Aleo-Italic-webfont.woff") format("woff"),
-    url("/assets/fonts/Aleo-Italic-webfont.ttf") format("truetype"),
-    url("/assets/fonts/Aleo-Italic-webfont.svg#aleoitalic") format("svg");
+  src: url("./../../fonts/Aleo-Italic-webfont.woff") format("woff");
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Aleo";
-  src: url("/assets/fonts/Aleo-Bold-webfont.eot");
-  src: url("/assets/fonts/Aleo-Bold-webfont.eot?#iefix")
-      format("embedded-opentype"),
-    url("/assets/fonts/Aleo-Bold-webfont.woff") format("woff"),
-    url("/assets/fonts/Aleo-Bold-webfont.ttf") format("truetype"),
-    url("/assets/fonts/Aleo-Bold-webfont.svg#aleobold") format("svg");
+  src: url("./../../fonts/Aleo-Bold-webfont.woff") format("woff");
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Aleo";
-  src: url("/assets/fonts/Aleo-BoldItalic-webfont.eot");
-  src: url("/assets/fonts/Aleo-BoldItalic-webfont.eot?#iefix")
-      format("embedded-opentype"),
-    url("/assets/fonts/Aleo-BoldItalic-webfont.woff") format("woff"),
-    url("/assets/fonts/Aleo-BoldItalic-webfont.ttf") format("truetype"),
-    url("/assets/fonts/Aleo-BoldItalic-webfont.svg#aleobolditalic")
-      format("svg");
+  src: url("./../../fonts/Aleo-BoldItalic-webfont.woff") format("woff");
   font-weight: 600;
   font-style: italic;
 }
@@ -81,8 +49,8 @@
 // ---------------------------------
 @font-face {
   font-family: "Lilypaly";
-  src: url("/assets/fonts/lilypaly-webfont.woff2") format("woff2"),
-    url("/assets/fonts/lilypaly-webfont.woff") format("woff");
+  src: url("./../../fonts/lilypaly-webfont.woff2") format("woff2"),
+    url("./../../fonts/lilypaly-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
