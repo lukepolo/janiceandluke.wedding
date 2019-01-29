@@ -39,28 +39,28 @@
 
       <div class="photos--grid">
         <div class="photos--item">
-          <img src="../../img/engagement_7.jpg" />
+          <img src="../../../img/engagement_7.jpg" />
         </div>
         <div class="photos--item">
-          <img src="../../img/engagement_6.jpg" />
+          <img src="../../../img/engagement_6.jpg" />
         </div>
         <div class="photos--item">
-          <img src="../../img/engagement_1.jpg" />
+          <img src="../../../img/engagement_1.jpg" />
         </div>
         <div class="photos--item">
-          <img src="../../img/engagement_2.jpg" />
+          <img src="../../../img/engagement_2.jpg" />
         </div>
         <div class="photos--item">
-          <img src="../../img/engagement_2.jpg" />
+          <img src="../../../img/engagement_2.jpg" />
         </div>
         <div class="photos--item">
-          <img src="../../img/engagement_5.jpg" />
+          <img src="../../../img/engagement_5.jpg" />
         </div>
         <div class="photos--item">
-          <img src="../../img/engagement_3.jpg" />
+          <img src="../../../img/engagement_3.jpg" />
         </div>
         <div class="photos--item">
-          <img src="../../img/engagement_4.jpg" />
+          <img src="../../../img/engagement_4.jpg" />
         </div>
       </div>
     </div>
@@ -98,7 +98,7 @@
         <h1 class="secondary"></h1>
 
         <div class="travel--img">
-          <img src="../../img/oakwood2.jpg" />
+          <img src="../../../img/oakwood2.jpg" />
           <div class="travel--img-text">
             <h3 class="primary" style="margin-bottom: -35px;">
               Oakwood Re<span class="left-s">s</span>or<span class="left-t"
@@ -141,7 +141,9 @@
           <div class="gradient-box gradient-box-dark"></div>
           <div class="gradient-box gradient-box-darkest"></div>
         </div>
-        <div class="callout">map</div>
+        <div class="callout">
+          <div class="map-container" ref="mapContainer"></div>
+        </div>
       </div>
     </section>
 
@@ -250,7 +252,92 @@
 
 <script>
 import Vue from "vue";
+import mapboxgl from "mapbox-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
+
 export default Vue.extend({
-  // ...
+  data() {
+    return {
+      map: null,
+    };
+  },
+  mounted() {
+    mapboxgl.accessToken =
+      "pk.eyJ1IjoibHVrZXBvbG8iLCJhIjoiY2pyaDB4MTA1MDc4NTN5dTc5bWltMjl4YSJ9.aFZ27lvLW-zGJ8fDY2vTgg";
+    // TODO - yah this is terrible, but cant get it to work otherwise
+    // the css is still rendering the offset of the parent (very annoying)
+    setTimeout(() => {
+      this.map = new mapboxgl.Map({
+        zoom: 14,
+        center: [-85.7405429, 41.4105645],
+        container: this.$refs.mapContainer,
+        style: "mapbox://styles/mapbox/streets-v9",
+      }).on("load", () => {
+        this.addMarkers();
+      });
+    });
+  },
+  methods: {
+    addMarkers() {
+      let locations = [
+        {
+          type: "Feature",
+          geometry: {
+            type: "Point",
+            coordinates: [-85.735408, 41.4086096],
+          },
+          properties: {
+            title: "The Oakwood Resort",
+            description: "You're staying here.",
+          },
+        },
+      ];
+
+      locations.forEach((location) => {
+        // create a HTML element for each feature
+        let el = document.createElement("div");
+        el.className = "marker";
+
+        // make a marker for each feature and add it to the map
+        new mapboxgl.Marker(el)
+          .setLngLat(location.geometry.coordinates)
+          .setPopup(
+            new mapboxgl.Popup({ offset: 25 }) // add popups
+              .setHTML(
+                "<h3>" +
+                  location.properties.title +
+                  "</h3><p>" +
+                  location.properties.description +
+                  "</p>",
+              ),
+          )
+          .addTo(this.map);
+      });
+    },
+  },
 });
 </script>
+
+<style>
+.map-container {
+  flex: 1 1 auto;
+  align-self: stretch;
+}
+
+.marker {
+  background-image: url("./../../../img/map-icons/mapbox-icon.png");
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.mapboxgl-popup {
+  max-width: 200px;
+}
+.mapboxgl-popup-content {
+  color: black;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+</style>

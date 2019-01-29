@@ -4,7 +4,7 @@ const ENV = require("dotenv").config().parsed;
 
 module.exports = function(env, argv) {
   return new VarieBundler(argv, __dirname)
-    .entry("app", ["resources/js/app/app.ts", "resources/sass/app.scss"])
+    .entry("app", ["resources/sass/app.scss", "resources/js/app/app.ts"])
     .aliases({
       "@app": path.join(__dirname, "resources/js/app"),
       "@views": path.join(__dirname, "resources/js/views"),
