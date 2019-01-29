@@ -9,3 +9,4 @@
 .phpunit.result.cache
 npm-debug.log
 /resources/views/layouts/app.blade.php
+.php_cs.cache
