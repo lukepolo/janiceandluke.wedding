@@ -2,7 +2,7 @@
 // =========================================================
 .photos {
   display: grid;
-  grid-template-rows: 30px auto 30px;
+  grid-template-rows: 30px auto 10px;
 
   &--grid {
     grid-column-start: 1;
