@@ -252,29 +252,25 @@
 
 <script>
 import Vue from "vue";
-import mapboxgl from "mapbox-gl";
-import "mapbox-gl/dist/mapbox-gl.css";
+import googleMapLoader from "./mixins/googleMapLoader";
 
 export default Vue.extend({
+  mixins: [googleMapLoader],
   data() {
     return {
       map: null,
     };
   },
-  mounted() {
-    mapboxgl.accessToken =
-      "pk.eyJ1IjoibHVrZXBvbG8iLCJhIjoiY2pyaDB4MTA1MDc4NTN5dTc5bWltMjl4YSJ9.aFZ27lvLW-zGJ8fDY2vTgg";
-    // TODO - yah this is terrible, but cant get it to work otherwise
-    // the css is still rendering the offset of the parent (very annoying)
-    setTimeout(() => {
-      this.map = new mapboxgl.Map({
-        zoom: 14,
-        center: [-85.7405429, 41.4105645],
-        container: this.$refs.mapContainer,
-        style: "mapbox://styles/mapbox/streets-v9",
-      }).on("load", () => {
-        this.addMarkers();
-      });
+  async mounted() {
+    await this.loadGoogleMaps("AIzaSyCRaKhP44xTots5SkgXfJHHtWa5zWT8s3s");
+
+    this.map = new google.maps.Map(this.$refs.mapContainer, {
+      center: {
+        lat: 41.4086096,
+        lng: -85.735408,
+      },
+      zoom: 16,
+      gestureHandling: "greedy",
     });
   },
   methods: {
@@ -284,7 +280,6 @@ export default Vue.extend({
           type: "Feature",
           geometry: {
             type: "Point",
-            coordinates: [-85.735408, 41.4086096],
           },
           properties: {
             title: "The Oakwood Resort",
@@ -293,26 +288,7 @@ export default Vue.extend({
         },
       ];
 
-      locations.forEach((location) => {
-        // create a HTML element for each feature
-        let el = document.createElement("div");
-        el.className = "marker";
-
-        // make a marker for each feature and add it to the map
-        new mapboxgl.Marker(el)
-          .setLngLat(location.geometry.coordinates)
-          .setPopup(
-            new mapboxgl.Popup({ offset: 25 }) // add popups
-              .setHTML(
-                "<h3>" +
-                  location.properties.title +
-                  "</h3><p>" +
-                  location.properties.description +
-                  "</p>",
-              ),
-          )
-          .addTo(this.map);
-      });
+      locations.forEach((location) => {});
     },
   },
 });
