@@ -11,13 +11,16 @@
   grid-area: content;
   display: grid;
   grid-auto-rows: min-content;
-  grid-template-areas: "header header info" "photos photos photos" "wedding wedding travel" "registry registry registry" "footer footer footer";
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-areas: "header info photos" "wedding wedding rsvp" "map map travel" "registry registry registry" "footer footer footer";
 
   @include breakpoint(mxl) {
+    grid-template-columns: 1fr 1fr;
     grid-template-areas: "header info" "photos photos" "wedding rsvp" "map travel" "registry registry" "footer footer";
   }
 
   @include breakpoint(sm) {
+    grid-template-columns: 1fr;
     grid-template-areas: "header" "info" "photos" "wedding" "rsvp" "travel" "map" "registry" "footer";
   }
 
