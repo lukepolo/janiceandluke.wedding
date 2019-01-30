@@ -270,18 +270,13 @@ export default Vue.extend({
         lng: -85.735408,
       },
       zoom: 16,
+      zoomControl: true,
+      disableDefaultUI: true,
+      fullscreenControl: true,
       gestureHandling: "greedy",
       styles: [
         {
-          elementType: "geometry",
-          stylers: [
-            {
-              color: "#f5f5f5",
-            },
-          ],
-        },
-        {
-          elementType: "labels.icon",
+          featureType: "poi.government",
           stylers: [
             {
               visibility: "off",
@@ -289,135 +284,55 @@ export default Vue.extend({
           ],
         },
         {
-          elementType: "labels.text.fill",
-          stylers: [
-            {
-              color: "#616161",
-            },
-          ],
-        },
-        {
-          elementType: "labels.text.stroke",
-          stylers: [
-            {
-              color: "#f5f5f5",
-            },
-          ],
-        },
-        {
-          featureType: "administrative.land_parcel",
-          elementType: "labels.text.fill",
-          stylers: [
-            {
-              color: "#bdbdbd",
-            },
-          ],
-        },
-        {
-          featureType: "poi",
+          featureType: "poi.government",
           elementType: "geometry",
           stylers: [
             {
-              color: "#eeeeee",
-            },
-          ],
-        },
-        {
-          featureType: "poi",
-          elementType: "labels.text.fill",
-          stylers: [
-            {
-              color: "#757575",
+              visibility: "off",
             },
           ],
         },
         {
           featureType: "poi.park",
-          elementType: "geometry",
           stylers: [
             {
-              color: "#e5e5e5",
+              visibility: "off",
             },
           ],
         },
         {
-          featureType: "poi.park",
-          elementType: "labels.text.fill",
+          featureType: "poi.place_of_worship",
           stylers: [
             {
-              color: "#9e9e9e",
+              visibility: "off",
+            },
+          ],
+        },
+        {
+          featureType: "poi.school",
+          elementType: "geometry",
+          stylers: [
+            {
+              visibility: "off",
+            },
+          ],
+        },
+        {
+          featureType: "poi.sports_complex",
+          stylers: [
+            {
+              visibility: "off",
             },
           ],
         },
         {
           featureType: "road",
-          elementType: "geometry",
           stylers: [
             {
-              color: "#ffffff",
+              color: "#d6d6d6",
             },
-          ],
-        },
-        {
-          featureType: "road.arterial",
-          elementType: "labels.text.fill",
-          stylers: [
             {
-              color: "#757575",
-            },
-          ],
-        },
-        {
-          featureType: "road.highway",
-          elementType: "geometry",
-          stylers: [
-            {
-              color: "#dadada",
-            },
-          ],
-        },
-        {
-          featureType: "road.highway",
-          elementType: "labels.text.fill",
-          stylers: [
-            {
-              color: "#616161",
-            },
-          ],
-        },
-        {
-          featureType: "road.local",
-          elementType: "labels.text.fill",
-          stylers: [
-            {
-              color: "#9e9e9e",
-            },
-          ],
-        },
-        {
-          featureType: "transit.line",
-          elementType: "geometry",
-          stylers: [
-            {
-              color: "#e5e5e5",
-            },
-          ],
-        },
-        {
-          featureType: "transit.station",
-          elementType: "geometry",
-          stylers: [
-            {
-              color: "#eeeeee",
-            },
-          ],
-        },
-        {
-          featureType: "water",
-          elementType: "geometry",
-          stylers: [
-            {
-              color: "#c9c9c9",
+              visibility: "simplified",
             },
           ],
         },
@@ -430,34 +345,48 @@ export default Vue.extend({
             },
           ],
         },
-        {
-          featureType: "water",
-          elementType: "labels.text.fill",
-          stylers: [
-            {
-              color: "#ffffff",
-            },
-          ],
-        },
       ],
     });
+    this.addMarkers();
   },
   methods: {
     addMarkers() {
-      let locations = [
-        {
-          type: "Feature",
-          geometry: {
-            type: "Point",
-          },
-          properties: {
-            title: "The Oakwood Resort",
-            description: "You're staying here.",
-          },
+      let marker = new google.maps.Marker({
+        map: this.map,
+        zIndex: 12312321,
+        position: {
+          lat: 41.4086861,
+          lng: -85.73485939999999,
         },
-      ];
+        animation: google.maps.Animation.DROP,
+        icon: {
+          url: require("./../../../img/map-icons/star-full.svg"),
+          scaledSize: new google.maps.Size(25, 25),
+          fillColor: "#1077aa",
+          fillOpacity: 1,
+          strokeColor: "#1077aa",
+        },
+      });
 
-      locations.forEach((location) => {});
+      marker.addListener("click", () => {
+        new google.maps.InfoWindow({
+          content: `
+            <div class="title full-width">Oakwood Resort</div>
+                <div class="address">
+                <div class="address-line full-width">702 E Lake View Rd</div>
+                <div class="address-line full-width">Syracuse, IN 46567</div>
+            </div>
+
+            </div>
+                <div class="view-link">
+                    <a target="_blank" href="https://maps.google.com/maps?ll=41.40861,-85.734859&amp;z=16&amp;t=m&amp;hl=en-US&amp;gl=US&amp;mapclient=apiv3&amp;cid=16636822861888824603">
+                        <span> View on Google Maps </span>
+                    </a>
+                </div>
+            </div>
+          `,
+        }).open(this.map, marker);
+      });
     },
   },
 });
@@ -468,21 +397,7 @@ export default Vue.extend({
   flex: 1 1 auto;
   align-self: stretch;
 }
-
-.marker {
-  background-image: url("./../../../img/map-icons/mapbox-icon.png");
-  background-size: cover;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-.mapboxgl-popup {
-  max-width: 200px;
-}
-.mapboxgl-popup-content {
+.gm-style-iw {
   color: black;
-  text-align: center;
-  font-family: "Open Sans", sans-serif;
 }
 </style>
