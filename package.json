@@ -11,17 +11,27 @@
     "watch": "webpack-dev-server --mode development --progress --hot"
   },
   "dependencies": {
-    "prettier": "^1.16.1",
+    "mapbox": "^1.0.0-beta10",
+    "mapbox-gl": "^0.52.0",
     "varie": "^0.11.3",
     "vue": "^2.5.21",
+    "vue-mapbox": "^0.1.3",
     "vue-router": "^3.0.2",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
-    "varie-bundler": "^0.6.3",
+    "husky": "^1.3.1",
+    "prettier": "^1.16.2",
+    "pretty-quick": "^1.10.0",
+    "varie-bundler": "^0.7.1",
     "vue-template-compiler": "^2.5.21"
   },
   "engines": {
     "node": "10.15.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "composer format && pretty-quick --staged"
+    }
   }
 }

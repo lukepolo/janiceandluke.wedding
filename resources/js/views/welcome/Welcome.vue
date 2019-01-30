@@ -39,28 +39,28 @@
 
       <div class="photos--grid">
         <div class="photos--item">
-          <img src="/resources/img/engagement_7.jpg" />
+          <img src="../../../img/engagement_7.jpg" />
         </div>
         <div class="photos--item">
-          <img src="/resources/img/engagement_6.jpg" />
+          <img src="../../../img/engagement_6.jpg" />
         </div>
         <div class="photos--item">
-          <img src="/resources/img/engagement_1.jpg" />
+          <img src="../../../img/engagement_1.jpg" />
         </div>
         <div class="photos--item">
-          <img src="/resources/img/engagement_2.jpg" />
+          <img src="../../../img/engagement_2.jpg" />
         </div>
         <div class="photos--item">
-          <img src="/resources/img/engagement_2.jpg" />
+          <img src="../../../img/engagement_2.jpg" />
         </div>
         <div class="photos--item">
-          <img src="/resources/img/engagement_5.jpg" />
+          <img src="../../../img/engagement_5.jpg" />
         </div>
         <div class="photos--item">
-          <img src="/resources/img/engagement_3.jpg" />
+          <img src="../../../img/engagement_3.jpg" />
         </div>
         <div class="photos--item">
-          <img src="/resources/img/engagement_4.jpg" />
+          <img src="../../../img/engagement_4.jpg" />
         </div>
       </div>
     </div>
@@ -98,7 +98,7 @@
         <h1 class="secondary"></h1>
 
         <div class="travel--img">
-          <img src="/resources/img/oakwood2.jpg" />
+          <img src="../../../img/oakwood2.jpg" />
           <div class="travel--img-text">
             <h3 class="primary" style="margin-bottom: -35px;">
               Oakwood Re<span class="left-s">s</span>or<span class="left-t"
@@ -141,7 +141,9 @@
           <div class="gradient-box gradient-box-dark"></div>
           <div class="gradient-box gradient-box-darkest"></div>
         </div>
-        <div class="callout">map</div>
+        <div class="callout">
+          <div class="map-container" ref="mapContainer"></div>
+        </div>
       </div>
     </section>
 
@@ -250,7 +252,237 @@
 
 <script>
 import Vue from "vue";
+import googleMapLoader from "./mixins/googleMapLoader";
+
 export default Vue.extend({
-  // ...
+  mixins: [googleMapLoader],
+  data() {
+    return {
+      map: null,
+    };
+  },
+  async mounted() {
+    await this.loadGoogleMaps("AIzaSyCRaKhP44xTots5SkgXfJHHtWa5zWT8s3s");
+
+    this.map = new google.maps.Map(this.$refs.mapContainer, {
+      center: {
+        lat: 41.4086096,
+        lng: -85.735408,
+      },
+      zoom: 16,
+      gestureHandling: "greedy",
+      styles: [
+        {
+          elementType: "geometry",
+          stylers: [
+            {
+              color: "#f5f5f5",
+            },
+          ],
+        },
+        {
+          elementType: "labels.icon",
+          stylers: [
+            {
+              visibility: "off",
+            },
+          ],
+        },
+        {
+          elementType: "labels.text.fill",
+          stylers: [
+            {
+              color: "#616161",
+            },
+          ],
+        },
+        {
+          elementType: "labels.text.stroke",
+          stylers: [
+            {
+              color: "#f5f5f5",
+            },
+          ],
+        },
+        {
+          featureType: "administrative.land_parcel",
+          elementType: "labels.text.fill",
+          stylers: [
+            {
+              color: "#bdbdbd",
+            },
+          ],
+        },
+        {
+          featureType: "poi",
+          elementType: "geometry",
+          stylers: [
+            {
+              color: "#eeeeee",
+            },
+          ],
+        },
+        {
+          featureType: "poi",
+          elementType: "labels.text.fill",
+          stylers: [
+            {
+              color: "#757575",
+            },
+          ],
+        },
+        {
+          featureType: "poi.park",
+          elementType: "geometry",
+          stylers: [
+            {
+              color: "#e5e5e5",
+            },
+          ],
+        },
+        {
+          featureType: "poi.park",
+          elementType: "labels.text.fill",
+          stylers: [
+            {
+              color: "#9e9e9e",
+            },
+          ],
+        },
+        {
+          featureType: "road",
+          elementType: "geometry",
+          stylers: [
+            {
+              color: "#ffffff",
+            },
+          ],
+        },
+        {
+          featureType: "road.arterial",
+          elementType: "labels.text.fill",
+          stylers: [
+            {
+              color: "#757575",
+            },
+          ],
+        },
+        {
+          featureType: "road.highway",
+          elementType: "geometry",
+          stylers: [
+            {
+              color: "#dadada",
+            },
+          ],
+        },
+        {
+          featureType: "road.highway",
+          elementType: "labels.text.fill",
+          stylers: [
+            {
+              color: "#616161",
+            },
+          ],
+        },
+        {
+          featureType: "road.local",
+          elementType: "labels.text.fill",
+          stylers: [
+            {
+              color: "#9e9e9e",
+            },
+          ],
+        },
+        {
+          featureType: "transit.line",
+          elementType: "geometry",
+          stylers: [
+            {
+              color: "#e5e5e5",
+            },
+          ],
+        },
+        {
+          featureType: "transit.station",
+          elementType: "geometry",
+          stylers: [
+            {
+              color: "#eeeeee",
+            },
+          ],
+        },
+        {
+          featureType: "water",
+          elementType: "geometry",
+          stylers: [
+            {
+              color: "#c9c9c9",
+            },
+          ],
+        },
+        {
+          featureType: "water",
+          elementType: "geometry.fill",
+          stylers: [
+            {
+              color: "#6891a8",
+            },
+          ],
+        },
+        {
+          featureType: "water",
+          elementType: "labels.text.fill",
+          stylers: [
+            {
+              color: "#ffffff",
+            },
+          ],
+        },
+      ],
+    });
+  },
+  methods: {
+    addMarkers() {
+      let locations = [
+        {
+          type: "Feature",
+          geometry: {
+            type: "Point",
+          },
+          properties: {
+            title: "The Oakwood Resort",
+            description: "You're staying here.",
+          },
+        },
+      ];
+
+      locations.forEach((location) => {});
+    },
+  },
 });
 </script>
+
+<style>
+.map-container {
+  flex: 1 1 auto;
+  align-self: stretch;
+}
+
+.marker {
+  background-image: url("./../../../img/map-icons/mapbox-icon.png");
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.mapboxgl-popup {
+  max-width: 200px;
+}
+.mapboxgl-popup-content {
+  color: black;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+</style>

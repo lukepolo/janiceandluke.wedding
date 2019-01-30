@@ -13,13 +13,23 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: url('/resources/img/main.png');
+    background-image: url("../../img/main.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    clip-path: polygon(0% 0%, 0% calc(100% - 30px), 100% calc(20% - 30px), 100% 0%);
+    clip-path: polygon(
+      0% 0%,
+      0% calc(100% - 30px),
+      100% calc(20% - 30px),
+      100% 0%
+    );
     @include breakpoint(sm) {
-      clip-path: polygon(0% 0%, 0% calc(100% - 30px), 100% calc(40% - 30px), 100% 0%);
+      clip-path: polygon(
+        0% 0%,
+        0% calc(100% - 30px),
+        100% calc(40% - 30px),
+        100% 0%
+      );
     }
   }
 

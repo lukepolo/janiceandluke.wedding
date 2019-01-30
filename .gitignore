@@ -1,6 +1,7 @@
 /node_modules
 /public/js
 /public/css
+/public/img
 /public/storage
 /storage/*.key
 /vendor
@@ -8,3 +9,4 @@
 .phpunit.result.cache
 npm-debug.log
 /resources/views/layouts/app.blade.php
+.php_cs.cache
