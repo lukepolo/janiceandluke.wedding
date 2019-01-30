@@ -15,7 +15,7 @@ export default {
      * @param libraries Libraries to load
      *                  (@see https://developers.google.com/maps/documentation/javascript/libraries)
      */
-    async loadGoogleMaps(apiKey, version, libraries) {
+    async loadGoogleMaps(apiKey, libraries, version) {
       if (!this.loaded && (!window.google || !window.google.maps)) {
         const googleMapScript = document.createElement("SCRIPT");
 
