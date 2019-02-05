@@ -33,5 +33,6 @@
     "hooks": {
       "pre-commit": "composer format && pretty-quick --staged"
     }
-  }
+  },
+  "variePath": "resources/js"
 }
