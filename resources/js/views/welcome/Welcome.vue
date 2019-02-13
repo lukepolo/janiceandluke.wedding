@@ -65,7 +65,7 @@
       </div>
     </div>
 
-    <section class="section wedding">
+    <section id="Our-Wedding" class="section wedding">
       <div class="section--content">
         <h1 class="secondary">Our Wedding</h1>
 
@@ -89,7 +89,7 @@
         </div>
       </div>
     </section>
-    <section class="section travel">
+    <section id="Travel" class="section travel">
       <div class="section--content">
         <h1 class="secondary">
           Travel<br />&<br /><span class="heading-small">Accommodations</span>
@@ -147,7 +147,7 @@
       </div>
     </section>
 
-    <section class="section registry">
+    <section id="Registry" class="section registry">
       <div class="section--content">
         <h1 class="secondary">Registry</h1>
         <div class="registry--list">

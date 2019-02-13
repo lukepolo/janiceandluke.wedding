@@ -1,24 +1,18 @@
 <template>
   <div id="app">
     <alerts></alerts>
-    <nav class="nav">
-      <div class="nav--left">Janice + Luke</div>
-      <div class="nav--right">
-        <div class="nav--item"><span class="hide-small">Our &nbsp;</span> Wedding</div>
-        <div class="nav--item">Travel</div>
-        <div class="nav--item">Registry</div>
-        <div class="nav--item">RSVP</div>
-      </div>
-    </nav>
+    <main-navigation></main-navigation>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 import Alerts from "varie/Alerts";
+import MainNavigation from "@views/layouts/components/main-navigation/MainNavigation";
 export default {
   components: {
     Alerts,
+    MainNavigation,
   },
 };
 </script>
