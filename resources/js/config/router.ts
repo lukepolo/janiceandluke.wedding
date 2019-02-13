@@ -58,6 +58,7 @@ export default {
     if (to.hash) {
       return {
         selector: to.hash,
+        offset: { x: 0, y: 50 },
       };
     }
     return { x: 0, y: 0 };

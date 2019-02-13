@@ -11,12 +11,10 @@
       <div class="header--img"></div>
       <h1 class="primary">
         <span>C</span><span class="left-o">o</span><span class="left-m">m</span
-        ><span class="left-e">e</span>
-        <div class="break-space"></div>
-        <span>C</span><span class="left-e">e</span><span>l</span
-        ><span class="left-e">e</span><span>b</span><span>r</span><span>a</span
-        ><span class="left-t">t</span><span class="left-e">e</span
-        ><span class="left-ex">!</span>
+        ><span class="left-e">e</span> <span>C</span
+        ><span class="left-e">e</span><span>l</span><span class="left-e">e</span
+        ><span>b</span><span>r</span><span>a</span><span class="left-t">t</span
+        ><span class="left-e">e</span><span class="left-ex">!</span>
       </h1>
       <h4 class="secondary">We're getting married!</h4>
     </header>
@@ -273,7 +271,7 @@ export default Vue.extend({
       zoomControl: true,
       disableDefaultUI: true,
       fullscreenControl: true,
-      gestureHandling: "greedy",
+      gestureHandling: "cooperative",
       styles: [
         {
           featureType: "poi.government",

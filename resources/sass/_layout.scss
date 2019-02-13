@@ -19,6 +19,11 @@
     grid-template-areas: "header info" "photos photos" "wedding rsvp" "map travel" "registry registry" "footer footer";
   }
 
+  @include breakpoint(md) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "header info" "photos photos" "wedding rsvp" "travel travel" "map map" "registry registry" "footer footer";
+  }
+
   @include breakpoint(sm) {
     grid-template-columns: 1fr;
     grid-template-areas: "header" "info" "photos" "wedding" "rsvp" "travel" "map" "registry" "footer";
@@ -89,6 +94,12 @@
   margin-top: 225px;
 }
 
+@include breakpoint(md) {
+  .section.map {
+    margin-top: 0;
+  }
+}
+
 @include breakpoint(sm) {
   .header {
     margin-right: 0;
@@ -96,10 +107,6 @@
   }
 
   .section.info {
-    margin-top: 0;
-  }
-
-  .section.map {
     margin-top: 0;
   }
 }
