@@ -142,32 +142,17 @@ h6 {
     span {
       position: relative;
     }
+
+    @include breakpoint(488px) {
+      margin-left: -15px;
+      margin-right: -15px;
+    }
   }
 
   &.secondary {
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 2px;
-  }
-}
-
-.primary + .secondary {
-  margin-top: -55px;
-}
-
-// Fix for Mobile Script Heading
-@include breakpoint(530px) {
-  .header h1.primary {
-    margin-top: -35px;
-  }
-}
-
-// Fix for Mobile Script Heading
-.break-space {
-  display: none;
-  @include breakpoint(530px) {
-    display: block;
-    margin-top: -55px;
   }
 }
 
@@ -188,6 +173,13 @@ a {
 
 .a-inverse {
   color: mix($color-text-inverse-primary, $color-link, 60%);
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: mix($color-text-inverse-primary, $color-link, 80%);
+    text-decoration: none;
+  }
 }
 
 // LISTS ---------------------------------------------------

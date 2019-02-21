@@ -11,12 +11,10 @@
       <div class="header--img"></div>
       <h1 class="primary">
         <span>C</span><span class="left-o">o</span><span class="left-m">m</span
-        ><span class="left-e">e</span>
-        <div class="break-space"></div>
-        <span>C</span><span class="left-e">e</span><span>l</span
-        ><span class="left-e">e</span><span>b</span><span>r</span><span>a</span
-        ><span class="left-t">t</span><span class="left-e">e</span
-        ><span class="left-ex">!</span>
+        ><span class="left-e">e</span> <span>C</span
+        ><span class="left-e">e</span><span>l</span><span class="left-e">e</span
+        ><span>b</span><span>r</span><span>a</span><span class="left-t">t</span
+        ><span class="left-e">e</span><span class="left-ex">!</span>
       </h1>
       <h4 class="secondary">We're getting married!</h4>
     </header>
@@ -65,7 +63,7 @@
       </div>
     </div>
 
-    <section class="section wedding">
+    <section id="Our-Wedding" class="section wedding">
       <div class="section--content">
         <h1 class="secondary">Our Wedding</h1>
 
@@ -89,7 +87,7 @@
         </div>
       </div>
     </section>
-    <section class="section travel">
+    <section id="Travel" class="section travel">
       <div class="section--content">
         <h1 class="secondary">
           Travel<br />&<br /><span class="heading-small">Accommodations</span>
@@ -123,9 +121,10 @@
         </div>
 
         <p>
-          The resort hotel is reserved for the wedding. To reserve a room in our
-          block, call the Oakwood and reference you are part of the
-          Falotico/Policinski wedding.
+          We have reserved a block of rooms at The Oakwood Resort. Wedding
+          guests will receive a discounted rate. Please call and reference the
+          Falotico / Policinski wedding when making your reservations. We
+          recommend booking early, as we expect rooms to fill up quickly.
         </p>
 
         <h3>Things to Do</h3>
@@ -147,7 +146,7 @@
       </div>
     </section>
 
-    <section class="section registry">
+    <section id="Registry" class="section registry">
       <div class="section--content">
         <h1 class="secondary">Registry</h1>
         <div class="registry--list">
@@ -273,7 +272,7 @@ export default Vue.extend({
       zoomControl: true,
       disableDefaultUI: true,
       fullscreenControl: true,
-      gestureHandling: "greedy",
+      gestureHandling: "cooperative",
       styles: [
         {
           featureType: "poi.government",
