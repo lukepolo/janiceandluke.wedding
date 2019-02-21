@@ -121,9 +121,10 @@
         </div>
 
         <p>
-          The resort hotel is reserved for the wedding. To reserve a room in our
-          block, call the Oakwood and reference you are part of the
-          Falotico/Policinski wedding.
+          We have reserved a block of rooms at The Oakwood Resort. Wedding
+          guests will receive a discounted rate. Please call and reference the
+          Falotico / Policinski wedding when making your reservations. We
+          recommend booking early, as we expect rooms to fill up quickly.
         </p>
 
         <h3>Things to Do</h3>
