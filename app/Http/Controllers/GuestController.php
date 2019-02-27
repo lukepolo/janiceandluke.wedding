@@ -13,7 +13,7 @@ class GuestController extends Controller
      */
     public function index(Request $request)
     {
-        return response()->json(Guest::where('last_name', 'LIKE', "%{$request->get('search')}%"));
+        return response()->json(Guest::where('last_name', 'LIKE', "%{$request->get('search')}%")->get());
     }
 
     /**

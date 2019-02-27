@@ -1,4 +1,5 @@
 import AppServiceProvider from "@app/providers/AppServiceProvider";
+import GuestServiceProvider from "@app/providers/GuestServiceProvider";
 import StateServiceProvider from "@app/providers/StateServiceProvider";
 import RoutingServiceProvider from "@app/providers/RouteServiceProvider";
 
@@ -94,5 +95,6 @@ export default {
      */
     AppServiceProvider,
     AlertServiceProvider,
+    GuestServiceProvider,
   },
 };

@@ -17,7 +17,7 @@ class CreateGuestFoodOptionsTable extends Migration
             $table->increments('id');
             $table->integer('guest_id');
             $table->json('wedding_selection');
-            $table->json('rehearsal_selection');
+            $table->json('rehearsal_selection')->nullable();
             $table->timestamps();
         });
     }

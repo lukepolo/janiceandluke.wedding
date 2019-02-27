@@ -16,8 +16,8 @@ class CreateGuestRsvpsTable extends Migration
         Schema::create('guest_rsvps', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('guest_id');
-            $table->boolean('attending');
-            $table->boolean('attending_rehearsal_dinner');
+            $table->boolean('attending')->default(0);
+            $table->boolean('attending_rehearsal_dinner')->default(0);
             $table->timestamps();
         });
     }
