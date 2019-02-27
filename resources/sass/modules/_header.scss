@@ -7,6 +7,11 @@
   text-align: center;
   padding: 20px;
 
+  @include breakpoint(sm) {
+    padding: 20px 15px;
+    height: 700px;
+  }
+
   &--img {
     position: absolute;
     top: 0;
