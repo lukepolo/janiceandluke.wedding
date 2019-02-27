@@ -1,12 +1,41 @@
 <template>
-  <div id="content">
-    <form v-form="form" @submit.prevent="search">
-      <input name="search" type="text" v-model="form.search" validate />
-      <button class="button" :disabled="!form.isValid()">Submit</button>
-    </form>
+  <section class="content">
+    <div class="gradient">
+      <div class="gradient-box gradient-box-lightest"></div>
+      <div class="gradient-box gradient-box-light"></div>
+      <div class="gradient-box gradient-box-dark"></div>
+      <div class="gradient-box gradient-box-darkest"></div>
+    </div>
 
-    <pre>{{ results }}</pre>
-  </div>
+    <div class="section">
+      <div class="section--content">
+        <h1 class="secondary">RSVP</h1>
+        <h2>Search for your Invitation</h2>
+        <p>
+          Enter your name below:
+        </p>
+        <form v-form="form" @submit.prevent="search">
+          <div class="flyform--group">
+            <input
+              name="search"
+              type="text"
+              v-model="form.search"
+              placeholder=" "
+              validate
+            />
+            <label for="branch">Last Name</label>
+          </div>
+
+          <div class="flyform--btns">
+            <button class="btn" :disabled="!form.isValid()">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="content">
+      <pre>{{ results }}</pre>
+    </div>
+  </section>
 </template>
 
 <script>
