@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="rsvp-page">
     <alerts></alerts>
     <main-navigation></main-navigation>
     <router-view></router-view>

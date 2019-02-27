@@ -13,7 +13,9 @@ export default function($router: RouterInterface) {
   |
   */
   $router.route("/", Welcome).setName("home");
-  $router.route("/RSVP", RSVP);
+  $router.layout("rsvp").group(() => {
+    $router.route("/RSVP", RSVP);
+  });
 
   $router.route("*", ErrorViews.Error404);
 }

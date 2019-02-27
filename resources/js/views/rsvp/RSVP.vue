@@ -32,9 +32,8 @@
         </form>
       </div>
     </div>
-    <div id="content">
-      <pre>{{ results }}</pre>
-    </div>
+
+    <pre>{{ results }}</pre>
   </section>
 </template>
 

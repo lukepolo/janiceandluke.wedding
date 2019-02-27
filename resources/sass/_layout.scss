@@ -4,7 +4,7 @@
 #app {
   display: grid;
   grid-template-rows: min-content 1fr;
-  grid-template-areas: "nav" "content";
+  grid-template-areas: "nav" "content" "footer";
 }
 
 #content {
@@ -12,25 +12,25 @@
   display: grid;
   grid-auto-rows: min-content;
   grid-template-columns: 1fr 1fr 2fr;
-  grid-template-areas: "header info photos" "wedding wedding rsvp" "map map travel" "registry registry registry" "footer footer footer";
+  grid-template-areas: "header info photos" "wedding wedding rsvp" "map map travel" "registry registry registry";
 
   @include breakpoint(mxl) {
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "header info" "photos photos" "wedding rsvp" "travel travel" "map map" "registry registry" "footer footer";
+    grid-template-areas: "header info" "photos photos" "wedding rsvp" "travel travel" "map map" "registry registry";
   }
 
   @include breakpoint(md) {
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "header info" "photos photos" "wedding rsvp" "travel travel" "map map" "registry registry" "footer footer";
+    grid-template-areas: "header info" "photos photos" "wedding rsvp" "travel travel" "map map" "registry registry";
   }
 
   @include breakpoint(sm) {
     grid-template-columns: 1fr;
-    grid-template-areas: "header" "info" "photos" "wedding" "rsvp" "travel" "map" "registry" "footer";
+    grid-template-areas: "header" "info" "photos" "wedding" "rsvp" "travel" "map" "registry";
   }
 
   &.rsvp-page {
-    grid-template-areas: "content" "footer";
+    grid-template-areas: "content";
     grid-template-rows: min-content auto min-content;
   }
 }
