@@ -12,7 +12,7 @@
         <h1 class="secondary">RSVP</h1>
         <h2>Search for your Invitation</h2>
         <p>
-          Enter your name below:
+          Enter your last name below:
         </p>
         <form v-form="form" @submit.prevent="search">
           <div class="flyform--group">
