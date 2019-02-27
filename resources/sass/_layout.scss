@@ -16,7 +16,7 @@
 
   @include breakpoint(mxl) {
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "header info" "photos photos" "wedding rsvp" "map travel" "registry registry" "footer footer";
+    grid-template-areas: "header info" "photos photos" "wedding rsvp" "travel travel" "map map" "registry registry" "footer footer";
   }
 
   @include breakpoint(md) {
@@ -91,13 +91,7 @@
 }
 
 .section.map {
-  margin-top: 225px;
-}
-
-@include breakpoint(md) {
-  .section.map {
-    margin-top: 0;
-  }
+  margin-top: 80px;
 }
 
 @include breakpoint(sm) {

@@ -36,9 +36,25 @@
 }
 
 .travel {
+  grid-template-columns: minmax(30px, 1fr) minmax(0, 1200px) minmax(30px, 1fr);
+
+  &-split {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &--text {
+    flex: 1 1 380px;
+    margin: 0 20px;
+    padding: 0 20px;
+  }
+
   &--img {
+    flex: 1 1 380px;
+    margin: 0 20px;
     position: relative;
-    margin-bottom: 60px;
+    margin-bottom: 20%;
 
     img {
       border-top-left-radius: 190px 160px;
@@ -47,15 +63,10 @@
     &-text {
       position: absolute;
       right: -30px;
-      bottom: -30px;
+      bottom: -30%;
       background-color: $color-accent-light;
       color: $color-text-inverse-primary;
       padding: 20px 40px;
-
-      @include breakpoint(sm) {
-        right: 0;
-        margin-left: 40px;
-      }
 
       h3 {
         margin-top: 0;
@@ -68,19 +79,15 @@
   }
 }
 
-@include breakpoint(md) {
-  .travel {
-    margin-left: -100px;
+@include breakpoint(500px) {
+  .travel--img,
+  .travel--text {
+    margin: 0;
+    padding: 0;
+  }
 
-    .section--content > h3,
-    .section--content > p {
-      margin-left: 100px;
-    }
-
-    &--img-text {
-      position: relative;
-      margin-top: -80px;
-    }
+  .travel--img-text {
+    position: initial;
   }
 }
 
@@ -99,7 +106,7 @@
     }
 
     .heading-small {
-      font-size: 26px;
+      font-size: 24px;
     }
   }
 }

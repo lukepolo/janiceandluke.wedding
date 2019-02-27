@@ -90,45 +90,49 @@
     <section id="Travel" class="section travel">
       <div class="section--content">
         <h1 class="secondary">
-          Travel<br />&<br /><span class="heading-small">Accommodations</span>
+          <span class="heading-small">Travel & Accommodations</span>
         </h1>
 
-        <h1 class="secondary"></h1>
+        <div class="travel-split">
+          <div class="travel--img">
+            <img src="../../../img/oakwood2.jpg" />
+            <div class="travel--img-text">
+              <h3 class="primary" style="margin-bottom: -35px;">
+                Oakwood Re<span class="left-s">s</span>or<span class="left-t"
+                  >t</span
+                >
+              </h3>
+              <p>
+                702 E. Lake View Rd <br />
+                Syracuse, IN 46567 <br />
+              </p>
+              <p>
+                <a href="tel:1-574-457-7100" class="a-inverse"
+                  >(574) 457-7100</a
+                >
+                <br />
+                <a
+                  href="http://oakwoodresort.com"
+                  target="blank"
+                  class="a-inverse"
+                  >oakwoodresort.com</a
+                >
+              </p>
+            </div>
+          </div>
 
-        <div class="travel--img">
-          <img src="../../../img/oakwood2.jpg" />
-          <div class="travel--img-text">
-            <h3 class="primary" style="margin-bottom: -35px;">
-              Oakwood Re<span class="left-s">s</span>or<span class="left-t"
-                >t</span
-              >
-            </h3>
+          <div class="travel--text">
             <p>
-              702 E. Lake View Rd <br />
-              Syracuse, IN 46567 <br />
+              We have reserved a block of rooms at The Oakwood Resort. Wedding
+              guests will receive a discounted rate. Please call and reference
+              the Falotico / Policinski wedding when making your reservations.
+              We recommend booking early, as we expect rooms to fill up quickly.
             </p>
-            <p>
-              <a href="tel:1-574-457-7100" class="a-inverse">(574) 457-7100</a>
-              <br />
-              <a
-                href="http://oakwoodresort.com"
-                target="blank"
-                class="a-inverse"
-                >oakwoodresort.com</a
-              >
-            </p>
+
+            <h3>Things to Do</h3>
+            <p>find things</p>
           </div>
         </div>
-
-        <p>
-          We have reserved a block of rooms at The Oakwood Resort. Wedding
-          guests will receive a discounted rate. Please call and reference the
-          Falotico / Policinski wedding when making your reservations. We
-          recommend booking early, as we expect rooms to fill up quickly.
-        </p>
-
-        <h3>Things to Do</h3>
-        <p>find things</p>
       </div>
     </section>
 
