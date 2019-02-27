@@ -83,7 +83,13 @@
       <div class="section--content">
         <div class="callout">
           <h3>We hope you can make it!</h3>
-          <button class="btn btn-large">RSVP</button>
+          <router-link
+            class="btn btn-large"
+            :to="{
+              name: 'RSVP',
+            }"
+            >RSVP</router-link
+          >
         </div>
       </div>
     </section>
