@@ -154,7 +154,11 @@
       <div class="section--content">
         <h1 class="secondary">Registry</h1>
         <div class="registry--list">
-          <div class="registry--item">
+          <a
+            class="registry--item"
+            href="https://www.crateandbarrel.com/gift-registry/janice-falotico-and-luke-policinski/r5866760"
+            target="_blank"
+          >
             <svg
               id="svg-icon-logo-cb-large"
               viewBox="0 0 219 32"
@@ -211,8 +215,12 @@
                 d="M213.52 1.6h5.6v29.76h-5.6v-29.76z"
               ></path>
             </svg>
-          </div>
-          <div class="registry--item">
+          </a>
+          <a
+            class="registry--item"
+            href="https://www.bedbathandbeyond.com/store/giftregistry/viewregistryguest/547232609?eventType=Wedding"
+            target="_blank"
+          >
             <svg viewBox="0 0 127 39" id="bbb-logo" width="100%" height="100%">
               <g fill="currentColor" fill-rule="evenodd">
                 <path
@@ -235,7 +243,7 @@
                 ></path>
               </g>
             </svg>
-          </div>
+          </a>
         </div>
       </div>
     </section>
