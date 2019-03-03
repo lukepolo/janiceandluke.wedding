@@ -7,7 +7,7 @@
       <div class="gradient-box gradient-box-darkest"></div>
     </div>
 
-    <section class="section">
+    <section class="section" v-if="!results">
       <div class="section--content">
         <h1 class="secondary">RSVP</h1>
         <h2>Search for your Invitation</h2>
@@ -36,7 +36,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" v-else>
       <div class="section--content">
         <h1 class="secondary">RSVP</h1>
         <h2>Search for your Invitation</h2>
@@ -48,7 +48,9 @@
         <form v-form="selectedGuestForm" @submit.prevent="selectGuest">
           <template v-for="result in results">
             <div class="list--select">
-              <label class="selected">
+              <label
+                :class="{ selected: selectedGuestForm.guest === result.id }"
+              >
                 <input
                   v-model="selectedGuestForm.guest"
                   name="guest"
@@ -60,7 +62,9 @@
             </div>
           </template>
           <div class="flyform--btns">
-            <button class="btn--link">Back</button>
+            <button class="btn--link" @click.prevent.stop="resetResults">
+              Back
+            </button>
             <button class="btn" :disabled="!selectedGuestForm.isValid()">
               Next
             </button>
@@ -95,6 +99,9 @@ export default Vue.extend({
     },
     selectGuest() {
       alert(`select guest ${this.selectedGuestForm.guest}`);
+    },
+    resetResults() {
+      this.$store.commit("guest/setSearchResults", null);
     },
   },
   computed: {
