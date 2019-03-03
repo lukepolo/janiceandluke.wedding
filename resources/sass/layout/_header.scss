@@ -5,11 +5,15 @@
   position: relative;
   color: $color-text-inverse-primary;
   text-align: center;
+  margin-right: -100%;
+  margin-bottom: -15vw;
   padding: 20px;
 
   @include breakpoint(sm) {
     padding: 20px 15px;
     height: 700px;
+    margin-right: 0;
+    margin-bottom: -40vw;
   }
 
   &--img {
@@ -28,6 +32,7 @@
       100% calc(20% - 30px),
       100% 0%
     );
+
     @include breakpoint(sm) {
       clip-path: polygon(
         0% 0%,
@@ -93,5 +98,14 @@
     .left-ex {
       left: -8px;
     }
+  }
+}
+
+// HEADER TEXT INFO
+.section.info {
+  margin-top: 55vh;
+
+  @include breakpoint(sm) {
+    margin-top: 0;
   }
 }

@@ -1,0 +1,14 @@
+// MAP SECTION =============================================
+// =========================================================
+.map {
+  margin-top: 80px;
+
+  &-container {
+    min-height: 500px;
+  }
+
+  .section--full {
+    display: flex;
+    flex-direction: column;
+  }
+}

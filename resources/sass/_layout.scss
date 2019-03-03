@@ -1,6 +1,5 @@
 // LAYOUT ==================================================
 // =========================================================
-
 #app {
   display: grid;
   grid-template-rows: min-content 1fr;
@@ -77,30 +76,4 @@
 
 .content {
   grid-area: content;
-}
-
-// BREAKPOINTS
-
-.header {
-  margin-right: -100%;
-  margin-bottom: -15vw;
-}
-
-.section.info {
-  margin-top: 55vh;
-}
-
-.section.map {
-  margin-top: 80px;
-}
-
-@include breakpoint(sm) {
-  .header {
-    margin-right: 0;
-    margin-bottom: -40vw;
-  }
-
-  .section.info {
-    margin-top: 0;
-  }
 }

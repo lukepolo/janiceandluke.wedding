@@ -93,7 +93,7 @@
         </div>
       </div>
     </section>
-    <section id="Travel" class="section travel">
+    <section id="Travel" class="section section-large travel">
       <div class="section--content">
         <h1 class="secondary">
           <span class="heading-small">Travel & Accommodations</span>
