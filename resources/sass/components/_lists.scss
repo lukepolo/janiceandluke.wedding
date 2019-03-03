@@ -1,0 +1,82 @@
+// LIST STYLES =============================================
+// =========================================================
+.list {
+  &--select {
+    label {
+      display: block;
+      text-align: left;
+      letter-spacing: 1px;
+      border: 1px solid $color-divider;
+      padding: 20px;
+      overflow: hidden;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $color-hover-list;
+
+        input[type="radio"]:after {
+          border-color: $color-accent-lightest;
+        }
+      }
+
+      &.selected {
+        background-color: $color-accent-dark;
+        color: $color-text-inverse-primary;
+        outline-offset: -9px;
+        margin-left: -10px;
+        margin-right: -10px;
+        padding: 20px 30px;
+
+        input[type="radio"]:before {
+          content: "";
+          display: block;
+          height: 9px;
+          width: 9px;
+          background-color: $color-accent-lightest;
+          border-radius: 50%;
+          margin-right: 10px;
+          position: absolute;
+          left: 55px;
+          top: 2px;
+        }
+
+        input[type="radio"]:after {
+          border-color: mix($color-accent-lightest, $white, 40%);
+        }
+
+        &:hover {
+          background-color: $color-accent-dark;
+
+          input[type="radio"]:after {
+            border-color: mix($color-accent-lightest, $white, 40%);
+          }
+        }
+      }
+    }
+
+    + .list--select {
+      label {
+        margin-top: -1px;
+      }
+    }
+
+    input[type="radio"] {
+      display: inline-block;
+      position: relative;
+      left: -60px;
+
+      &:after {
+        content: "";
+        display: block;
+        height: 15px;
+        width: 15px;
+        border: 2px solid $color-divider;
+        border-radius: 50%;
+        margin-right: 10px;
+        position: relative;
+        left: 50px;
+        top: -3px;
+      }
+    }
+  }
+}

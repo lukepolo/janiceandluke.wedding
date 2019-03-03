@@ -7,7 +7,7 @@
       <div class="gradient-box gradient-box-darkest"></div>
     </div>
 
-    <div class="section">
+    <section class="section">
       <div class="section--content">
         <h1 class="secondary">RSVP</h1>
         <h2>Search for your Invitation</h2>
@@ -29,30 +29,45 @@
 
           <div class="flyform--btns">
             <button class="btn" :disabled="!searchForm.isValid()">
-              Submit
+              Find my Invite
             </button>
           </div>
         </form>
       </div>
-    </div>
-    <form v-form="selectedGuestForm" @submit.prevent="selectGuest">
-      <template v-for="result in results">
+    </section>
+
+    <section class="section">
+      <div class="section--content">
+        <h1 class="secondary">RSVP</h1>
+        <h2>Search for your Invitation</h2>
         <p>
-          <label>
-            <input
-              v-model="selectedGuestForm.guest"
-              name="guest"
-              type="radio"
-              :value="result.id"
-            />
-            {{ result.first_name }} {{ result.last_name }}
-          </label>
+          We've found one possible match in the guest list. Please select your
+          party from the list below:
         </p>
-      </template>
-      <button class="btn" :disabled="!selectedGuestForm.isValid()">
-        Submit
-      </button>
-    </form>
+
+        <form v-form="selectedGuestForm" @submit.prevent="selectGuest">
+          <template v-for="result in results">
+            <div class="list--select">
+              <label class="selected">
+                <input
+                  v-model="selectedGuestForm.guest"
+                  name="guest"
+                  type="radio"
+                  :value="result.id"
+                />
+                {{ result.first_name }} {{ result.last_name }}
+              </label>
+            </div>
+          </template>
+          <div class="flyform--btns">
+            <button class="btn--link">Back</button>
+            <button class="btn" :disabled="!selectedGuestForm.isValid()">
+              Next
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
   </section>
 </template>
 

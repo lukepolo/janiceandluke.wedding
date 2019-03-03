@@ -62,3 +62,20 @@
 [class*=" btn"] + [class*=" btn"] {
   margin-left: 15px;
 }
+
+// BUTTON LINKS
+.btn--link {
+  background: none;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: $color-text-secondary;
+
+  &:active,
+  &:focus,
+  &:hover {
+    outline: none;
+    color: $color-text-primary;
+    cursor: pointer;
+  }
+}
