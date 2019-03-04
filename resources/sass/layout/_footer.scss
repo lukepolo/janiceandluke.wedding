@@ -4,6 +4,21 @@
   margin-top: 60px;
   position: relative;
 
+  &--message {
+    text-align: center;
+    font-size: 13px;
+    margin-bottom: 20px;
+
+    p {
+      margin: 3px 0;
+    }
+
+    .separator {
+      display: inline-block;
+      padding: 0 8px;
+    }
+  }
+
   .gradient {
     min-height: 50px;
   }
