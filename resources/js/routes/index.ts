@@ -18,7 +18,7 @@ export default function($router: RouterInterface) {
     $router.route("/RSVP", RSVP);
   });
   $router.layout("invite").group(() => {
-    $router.route("/invite", Invite);
+    $router.route("/invite/guest/:guest", Invite).setName("invite.guest");
   });
 
   $router.route("*", ErrorViews.Error404);

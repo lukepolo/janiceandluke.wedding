@@ -7,7 +7,7 @@
       <div class="gradient-box gradient-box-darkest"></div>
     </div>
 
-    <section class="section" v-if="!results">
+    <section class="section" v-if="!results || results.length === 0">
       <div class="section--content">
         <h1 class="secondary">RSVP</h1>
         <h2>Search for your Invitation</h2>
@@ -23,8 +23,13 @@
               v-model="searchForm.search"
               placeholder=" "
               validate
+              @keydown="resetResults"
             />
             <label for="lastName">Last Name</label>
+          </div>
+
+          <div v-if="results && results.length === 0">
+            OH-NO we could not find your invite!
           </div>
 
           <div class="flyform--btns">
@@ -98,9 +103,15 @@ export default Vue.extend({
       this.$store.dispatch("guest/search", this.searchForm.search);
     },
     selectGuest() {
-      alert(`select guest ${this.selectedGuestForm.guest}`);
+      this.$router.push({
+        name: "invite.guest",
+        params: {
+          guest: this.selectedGuestForm.guest,
+        },
+      });
     },
     resetResults() {
+      console.info("reset");
       this.$store.commit("guest/setSearchResults", null);
     },
   },
