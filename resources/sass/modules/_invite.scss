@@ -8,4 +8,12 @@
     flex: 1 1 400px;
     margin: 0 40px;
   }
+
+  &--section {
+    &-secondary {
+      border-left: 6px solid $color-accent-lightest;
+      margin-top: 50px;
+      padding: 0 0 0 30px;
+    }
+  }
 }

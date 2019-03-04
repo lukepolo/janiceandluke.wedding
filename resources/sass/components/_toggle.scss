@@ -16,9 +16,19 @@
     }
   }
 
+  &--img {
+    text-align: center;
+    margin-bottom: 10px;
+
+    svg {
+      max-width: 80px;
+      fill: mix($color-accent-lightest, $white, 50%);
+    }
+  }
+
   label {
     flex: 1 1 auto;
-    border: 4px solid $color-accent-lightest;
+    border: 1px solid $color-accent-lightest;
     color: $color-link;
     font-weight: 900;
     text-transform: uppercase;
@@ -35,7 +45,7 @@
       transform: scale(1.1);
       transition: all 0.3s ease;
       z-index: 2;
-      border-left-width: 4px;
+      border-left-width: 1px;
     }
   }
 
@@ -52,7 +62,22 @@
         transform: scale(1.05);
         transition: all 0.3s ease;
         z-index: 2;
-        border-left-width: 4px;
+        border-left-width: 1px;
+
+        .toggle--img {
+          svg {
+            fill: $color-accent-lightest;
+          }
+        }
+      }
+    }
+  }
+
+  &-muted {
+    .toggle--item {
+      label {
+        font-weight: 400;
+        text-transform: none;
       }
     }
   }
