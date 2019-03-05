@@ -82,3 +82,12 @@
     }
   }
 }
+
+@include breakpoint(sm) {
+  .toggle {
+    label {
+      font-size: 16px;
+      padding: 10px;
+    }
+  }
+}

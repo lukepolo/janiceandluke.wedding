@@ -19,3 +19,17 @@
     }
   }
 }
+
+@include breakpoint(sm) {
+  .invite {
+    &--item {
+      margin: 0;
+    }
+
+    &--section {
+      &-secondary {
+        padding-left: 20px;
+      }
+    }
+  }
+}

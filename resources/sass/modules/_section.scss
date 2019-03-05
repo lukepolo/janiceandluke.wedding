@@ -3,10 +3,10 @@
 .section {
   display: grid;
   grid-template-areas: "left center right";
-  grid-template-columns: minmax(30px, 1fr) minmax(0, 600px) minmax(30px, 1fr);
+  grid-template-columns: minmax(20px, 1fr) minmax(0, 600px) minmax(20px, 1fr);
 
   &-large {
-    grid-template-columns: minmax(30px, 1fr) minmax(0, 1200px) minmax(30px, 1fr);
+    grid-template-columns: minmax(20px, 1fr) minmax(0, 1200px) minmax(20px, 1fr);
   }
 
   &--content {
@@ -18,11 +18,5 @@
   &--full {
     grid-column-start: 1;
     grid-column-end: -1;
-  }
-}
-
-@include breakpoint(sm) {
-  .section--content:first-child {
-    padding-top: 0;
   }
 }

@@ -158,7 +158,7 @@
     </div>
 
     <br />
-    <div class="flyform--group">
+    <div class="flyform--group flyform--group-textarea">
       <textarea
         :id="`food_restrictions_${guest.id}`"
         :name="`food_restrictions_${guest.id}`"

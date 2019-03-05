@@ -90,6 +90,7 @@ $flyform-transition: all 0.5s;
   }
 
   textarea {
+    order: 2;
     width: 100%;
     resize: none;
     border: 2px solid $color-divider;
@@ -101,6 +102,8 @@ $flyform-transition: all 0.5s;
     }
 
     + label {
+      order: 1;
+      position: initial;
       color: $color-text-primary;
       font-weight: 300;
     }
@@ -109,6 +112,12 @@ $flyform-transition: all 0.5s;
   &-nomargin {
     margin-top: 0;
     margin-bottom: 0;
+  }
+
+  &-textarea {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
   }
 
   // PREFIXED INPUTS ----------------------------------------
