@@ -27,7 +27,7 @@
           <router-link :to="{ name: 'RSVP' }" class="btn--link"
             >Back</router-link
           >
-          <button class="btn" :disabled="canSubmit">Send RSVP</button>
+          <button class="btn" :disabled="!canSubmit">Send RSVP</button>
         </div>
       </div>
     </form>
@@ -76,10 +76,15 @@ export default Vue.extend({
           plusOneForm: this.plusOneForm && this.plusOneForm.data(),
         })
         .then(() => {
-          alert("success");
+          this.alertService.success("Thanks for updating your RSVP!");
+          this.$router.push("/");
         })
         .catch(() => {
-          this.alertService.info("info message", "This is an Info Alert");
+          this.alertService.error(
+            "Crap, we had an error. Contact us ASAP!",
+            "Error",
+            0,
+          );
         });
     },
     createGuestForm(guest) {
