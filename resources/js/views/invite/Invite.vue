@@ -7,210 +7,127 @@
       <div class="gradient-box gradient-box-darkest"></div>
     </div>
 
-    <div class="section section-large">
+    <form @sumit.prevent="updateRsvp" class="section section-large">
       <div class="section--content">
         <h1 class="secondary">My Invitation</h1>
-
         <div class="invite">
-          <div class="invite--item">
-            <h3>Janice Falotico</h3>
-            <hr />
-
-            <div class="invite--section">
-              <h4 class="text-left">
-                Wedding :
-                <span class="muted">September 14, 2019 | 4:30 PM</span>
-              </h4>
-              <div class="toggle">
-                <div class="toggle--item">
-                  <input id="wedding1-accept" type="radio" name="wedding1" />
-                  <label for="wedding1-accept">Accept</label>
-                </div>
-
-                <div class="toggle--item">
-                  <input id="wedding1-regret" type="radio" name="wedding1" />
-                  <label for="wedding1-regret">Regret</label>
-                </div>
-              </div>
-
-              <h4 class="text-left">Meal Choice :</h4>
-
-              <div class="toggle toggle-muted">
-                <div class="toggle--item">
-                  <input id="food1-meat" type="radio" name="food1" />
-                  <label for="food1-meat">
-                    <div class="toggle--img">
-                      <icon-cow></icon-cow>
-                    </div>
-                    Filet Mignon
-                  </label>
-                </div>
-
-                <div class="toggle--item">
-                  <input id="food1-veggie" type="radio" name="food1" />
-                  <label for="food1-veggie">
-                    <div class="toggle--img">
-                      <icon-vegetable></icon-vegetable>
-                    </div>
-                    Tofu Stir-Fry
-                  </label>
-                </div>
-              </div>
-            </div>
-
-            <div class="invite--section invite--section-secondary">
-              <h4 class="text-left">
-                Rehearsal Dinner :
-                <span class="muted">September 13, 2019 | 6:00 PM</span>
-              </h4>
-              <div class="toggle">
-                <div class="toggle--item">
-                  <input
-                    id="rehearsal1-accept"
-                    type="radio"
-                    name="rehearsal1"
-                  />
-                  <label for="rehearsal1-accept">Accept</label>
-                </div>
-
-                <div class="toggle--item">
-                  <input
-                    id="rehearsal1-regret"
-                    type="radio"
-                    name="rehearsal1"
-                  />
-                  <label for="rehearsal1-regret">Regret</label>
-                </div>
-              </div>
-
-              <h4 class="text-left">Meal Choice :</h4>
-              <div class="toggle toggle-muted">
-                <div class="toggle--item">
-                  <input
-                    id="rehearsal1-meat"
-                    type="radio"
-                    name="rehearsal-food1"
-                  />
-                  <label for="rehearsal1-meat">
-                    <div class="toggle--img">
-                      <icon-cow></icon-cow>
-                    </div>
-                    Steak
-                  </label>
-                </div>
-
-                <div class="toggle--item">
-                  <input
-                    id="rehearsal1-fish"
-                    type="radio"
-                    name="rehearsal-food1"
-                  />
-                  <label for="rehearsal1-fish">
-                    <div class="toggle--img">
-                      <icon-fish></icon-fish>
-                    </div>
-                    Fish
-                  </label>
-                </div>
-
-                <div class="toggle--item">
-                  <input
-                    id="rehearsal1-veggie"
-                    type="radio"
-                    name="rehearsal-food1"
-                  />
-                  <label for="rehearsal1-veggie">
-                    <div class="toggle--img">
-                      <icon-vegetable></icon-vegetable>
-                    </div>
-                    Veggie
-                  </label>
-                </div>
-              </div>
-            </div>
-
-            <br />
-            <div class="flyform--group">
-              <textarea name="restrictions" rows="5"></textarea>
-              <label for="restrictions"
-                >Please list any dietary restrictions below :</label
-              >
-            </div>
-          </div>
-
-          <div class="invite--item">
-            <h3>Luke Policinski</h3>
-            <hr />
-
-            <div class="invite--section">
-              <h4 class="text-left">
-                Wedding :
-                <span class="muted">September 14, 2019 | 4:30 PM</span>
-              </h4>
-              <div class="toggle">
-                <div class="toggle--item">
-                  <input id="wedding2-accept" type="radio" name="wedding2" />
-                  <label for="wedding2-accept">Accept</label>
-                </div>
-
-                <div class="toggle--item">
-                  <input id="wedding2-regret" type="radio" name="wedding2" />
-                  <label for="wedding2-regret">Regret</label>
-                </div>
-              </div>
-
-              <h4 class="text-left">Meal Choice :</h4>
-
-              <div class="toggle toggle-muted">
-                <div class="toggle--item">
-                  <input id="food2-meat" type="radio" name="food2" />
-                  <label for="food2-meat">
-                    <div class="toggle--img">
-                      <icon-cow></icon-cow>
-                    </div>
-                    Filet Mignon
-                  </label>
-                </div>
-
-                <div class="toggle--item">
-                  <input id="food2-veggie" type="radio" name="food2" />
-                  <label for="food2-veggie">
-                    <div class="toggle--img">
-                      <icon-vegetable></icon-vegetable>
-                    </div>
-                    Tofu Stir-Fry
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
+          <guest-invite
+            :guest="guest"
+            :guest-form="guestForm"
+            v-if="guestForm"
+          ></guest-invite>
+          <guest-invite
+            :guest="plusOne"
+            :guest-form="plusOneForm"
+            v-if="plusOneForm"
+          ></guest-invite>
         </div>
 
         <div class="flyform--btns">
-          <button class="btn--link">Back</button>
+          <button class="btn--link" :disabled="canSubmit">Back</button>
           <button class="btn">Send RSVP</button>
         </div>
       </div>
-    </div>
+    </form>
   </section>
 </template>
 
 <script>
 import Vue from "vue";
-import IconCow from "./components/IconCow";
-import IconFish from "./components/IconFish";
-import IconVegetable from "./components/IconVegetable";
+
+import GuestInvite from "./components/GuestInvite";
 
 export default Vue.extend({
   components: {
-    IconCow,
-    IconFish,
-    IconVegetable,
+    GuestInvite,
   },
   data() {
-    return {};
+    return {
+      guestForm: null,
+      plusOneForm: null,
+    };
   },
-  methods: {},
-  computed: {},
+  watch: {
+    $route: {
+      immediate: true,
+      handler() {
+        this.$store.dispatch("guest/show", this.$route.params.guest);
+      },
+    },
+    guest: {
+      immediate: true,
+      handler(guest) {
+        if (guest) {
+          this.guestForm = this.createGuestForm(guest);
+          if (guest.guest) {
+            this.plusOneForm = this.createGuestForm(guest.guest);
+          }
+        }
+      },
+    },
+  },
+  methods: {
+    updateRsvp() {
+      console.info(this.guestForm.data());
+      console.info(this.plusOneForm.data());
+    },
+    createGuestForm(guest) {
+      return this.createForm({
+        // TODO - this isn't needed but required for now until i fix validation
+        guest,
+        guest_rsvp: {
+          attending: null,
+          attending_rehearsal_dinner: null,
+        },
+        guest_food_option: {
+          wedding_selection: {
+            entree: null,
+          },
+          rehearsal_selection: {
+            entree: null,
+          },
+          dietary_restrictions: null,
+        },
+      }).validation({
+        rules: {
+          guest_rsvp: {
+            attending: "required",
+            attending_rehearsal_dinner: "require_rehearsal_dinner",
+          },
+          guest_food_option: {
+            wedding_selection: {
+              // TODO - varie needs to handle this
+              // entree: 'required_if:guest_rsvp.attending,true',
+              entree: "require_dinner_entree",
+            },
+            rehearsal_selection: {
+              // TODO - varie needs to handle this
+              // entree: 'required_if:guest_rsvp.attending_rehearsal_dinner,true',
+              entree: "require_rehearsal_dinner_entree",
+            },
+          },
+        },
+      });
+    },
+  },
+  computed: {
+    guest() {
+      return this.$store.state.guest.guest;
+    },
+    plusOne() {
+      return this.guest && this.guest.guest;
+    },
+    canSubmit() {
+      if (this.guest && this.guestForm && this.guestForm.isValid()) {
+        if (!this.plusOne) {
+          return true;
+        }
+        if (this.plusOne && this.plusOneForm && this.plusOneForm.isValid()) {
+          return true;
+        }
+      }
+      return false;
+    },
+  },
 });
 </script>

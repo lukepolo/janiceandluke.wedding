@@ -8,8 +8,12 @@ export default class GuestService {
     this.httpService = httpService;
   }
 
+  show(guest) {
+    return this.httpService.get(`/api/guest/${guest}`);
+  }
+
   search(lastName) {
-    return this.httpService.get(`api/guest?search=${lastName}`);
+    return this.httpService.get(`/api/guest?search=${lastName}`);
   }
 
   update() {}

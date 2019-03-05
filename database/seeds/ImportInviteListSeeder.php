@@ -14,6 +14,7 @@ class ImportInviteListSeeder extends Seeder
         // TODO - family members
         $guests = [
             [
+                'guest_id' => 2,
                 'first_name' => 'Pam',
                 'last_name' => 'Falotico',
                 'allowed_guest' => false,
@@ -41,7 +42,7 @@ class ImportInviteListSeeder extends Seeder
             ]
         ];
 
-        foreach($guests as $guest) {
+        foreach ($guests as $guest) {
             \App\Models\Guest::create($guest);
         }
     }
