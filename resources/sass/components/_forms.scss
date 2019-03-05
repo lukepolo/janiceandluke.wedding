@@ -71,7 +71,8 @@ $flyform-transition: all 0.5s;
     }
 
     // placeholder required for float label to work
-    &:placeholder-shown:not(:focus) > label {
+    &:placeholder-shown:not(:focus) + div + label,
+    &:placeholder-shown:not(:focus) + label {
       font-size: $flyform-font-size;
       top: $flyform-spacing * 1.5 - 1px;
       padding-left: $flyform-spacing/2;

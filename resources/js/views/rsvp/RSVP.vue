@@ -28,8 +28,13 @@
             <label for="lastName">Last Name</label>
           </div>
 
-          <div v-if="results && results.length === 0">
-            OH-NO we could not find your invite!
+          <div
+            class="banner banner-danger"
+            v-if="results && results.length === 0"
+          >
+            Uh oh! We can't find an invite matching that name.
+            <br />
+            Please reach out to us if you think we made a mistake.
           </div>
 
           <div class="flyform--btns">
