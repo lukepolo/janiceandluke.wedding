@@ -45,8 +45,10 @@ class GuestController extends Controller
                   ->leftJoin('guests as temp_guest', 'temp_guest.id', '=', 'guests.guest_id')
                   ->where('guests.last_name', 'LIKE', "%{$request->get('search')}%")
                   ->where(function ($query) {
-                      $query->whereRaw('temp_guest.id > guests.id')
-                          ->orWhereNull('temp_guest.id');
+                      $query->where(function ($query) {
+                          $query->whereRaw('temp_guest.id < guests.id')
+                              ->orWhereRaw('temp_guest.id > guests.id');
+                      })->orWhereNull('temp_guest.id');
                   })
                   ->get()
           );
