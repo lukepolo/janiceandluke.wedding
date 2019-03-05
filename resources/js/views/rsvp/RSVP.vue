@@ -24,6 +24,7 @@
               placeholder=" "
               validate
               @keydown="resetResults"
+              v-focus
             />
             <label for="lastName">Last Name</label>
           </div>
@@ -117,7 +118,9 @@ export default Vue.extend({
   },
   methods: {
     search() {
-      this.$store.dispatch("guest/search", this.searchForm.search);
+      this.$store.dispatch("guest/search", this.searchForm.search).then(() => {
+        window.scrollTo(0, 0);
+      });
     },
     selectGuest() {
       this.$router.push({

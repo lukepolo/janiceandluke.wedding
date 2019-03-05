@@ -22,6 +22,7 @@ class ImportInviteListSeeder extends Seeder
 
             ],
             [
+                'guest_id' => 1,
                 'first_name' => 'Jim',
                 'last_name' => 'Falotico',
                 'allowed_guest' => false,
