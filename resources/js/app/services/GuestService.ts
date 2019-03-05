@@ -16,5 +16,7 @@ export default class GuestService {
     return this.httpService.get(`/api/guest?search=${lastName}`);
   }
 
-  update() {}
+  update(guest, data) {
+    return this.httpService.put(`/api/guest/${guest.id}`, data);
+  }
 }
