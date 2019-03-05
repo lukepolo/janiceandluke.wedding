@@ -68,10 +68,17 @@ export default Vue.extend({
   },
   methods: {
     updateRsvp() {
-      this.$store.dispatch("guest/update", {
-        guestForm: this.guestForm.data(),
-        plusOneForm: this.plusOneForm && this.plusOneForm.data(),
-      });
+      this.$store
+        .dispatch("guest/update", {
+          guestForm: this.guestForm.data(),
+          plusOneForm: this.plusOneForm && this.plusOneForm.data(),
+        })
+        .then(() => {
+          alert("success");
+        })
+        .catch(() => {
+          this.alertService.info("info message", "This is an Info Alert");
+        });
     },
     createGuestForm(guest) {
       return this.createForm({

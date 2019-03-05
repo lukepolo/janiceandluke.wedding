@@ -50,7 +50,7 @@ export default function(guestService: GuestService) {
         );
       }
 
-      Promise.all(requests);
+      return Promise.all(requests);
     },
   };
 }
