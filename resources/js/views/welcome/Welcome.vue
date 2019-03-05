@@ -96,9 +96,7 @@
     <section id="Travel" class="section section-large travel">
       <div class="section--content">
         <h1 class="secondary">
-          <span class="heading-small"
-            >Travel <span class="hide-small">& Accommodations</span></span
-          >
+          Travel <span class="hide-small">& Accommodations</span>
         </h1>
 
         <div class="travel-split">
