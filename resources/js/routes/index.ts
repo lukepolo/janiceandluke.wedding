@@ -15,10 +15,10 @@ export default function($router: RouterInterface) {
   */
   $router.route("/", Welcome).setName("home");
   $router.layout("rsvp").group(() => {
-    $router.route("/RSVP", RSVP);
+    $router.route("RSVP", RSVP);
   });
   $router.layout("invite").group(() => {
-    $router.route("/invite/guest/:guest", Invite).setName("invite.guest");
+    $router.route("invite/guest/:guest", Invite).setName("invite.guest");
   });
 
   $router.route("*", ErrorViews.Error404);

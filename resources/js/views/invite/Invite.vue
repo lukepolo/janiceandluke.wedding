@@ -24,8 +24,10 @@
         </div>
 
         <div class="flyform--btns">
-          <button class="btn--link" :disabled="canSubmit">Back</button>
-          <button class="btn">Send RSVP</button>
+          <router-link :to="{ name: 'RSVP' }" class="btn--link"
+            >Back</router-link
+          >
+          <button class="btn" :disabled="canSubmit">Send RSVP</button>
         </div>
       </div>
     </form>
@@ -81,7 +83,7 @@ export default Vue.extend({
         });
     },
     createGuestForm(guest) {
-      return this.createForm({
+      let form = this.createForm({
         // TODO - this isn't needed but required for now until i fix validation
         guest,
         guest_rsvp: {
@@ -117,6 +119,13 @@ export default Vue.extend({
           },
         },
       });
+      if (guest.rsvp && guest.food_options) {
+        form.fill({
+          guest_rsvp: guest.rsvp,
+          guest_food_option: guest.food_options,
+        });
+      }
+      return form;
     },
   },
   computed: {
@@ -137,6 +146,9 @@ export default Vue.extend({
       }
       return false;
     },
+  },
+  destroyed() {
+    this.$store.commit("guest/setGuest", null);
   },
 });
 </script>
