@@ -81,7 +81,7 @@ export default Vue.extend({
         });
     },
     createGuestForm(guest) {
-      return this.createForm({
+      let form = this.createForm({
         // TODO - this isn't needed but required for now until i fix validation
         guest,
         guest_rsvp: {
@@ -117,6 +117,13 @@ export default Vue.extend({
           },
         },
       });
+      if (guest.rsvp && guest.food_options) {
+        form.fill({
+          guest_rsvp: guest.rsvp,
+          guest_food_option: guest.food_options,
+        });
+      }
+      return form;
     },
   },
   computed: {
