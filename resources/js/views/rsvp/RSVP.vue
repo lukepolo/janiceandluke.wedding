@@ -131,6 +131,7 @@ export default Vue.extend({
       });
     },
     resetResults() {
+      this.selectedGuestForm.reset();
       this.$store.commit("guest/setSearchResults", null);
     },
   },
@@ -138,6 +139,9 @@ export default Vue.extend({
     results() {
       return this.$store.state.guest.searchResults;
     },
+  },
+  destroyed() {
+    this.resetResults();
   },
 });
 </script>
