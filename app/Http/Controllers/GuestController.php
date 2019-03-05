@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Guest;
 use Illuminate\Http\Request;
 use App\Services\GuestService;
+use Illuminate\Support\Facades\DB;
 use App\Exceptions\NotAllowedRehearsalDinner;
 
 class GuestController extends Controller
@@ -29,7 +30,17 @@ class GuestController extends Controller
      */
     public function index(Request $request)
     {
-        return response()->json(Guest::where('last_name', 'LIKE', "%{$request->get('search')}%")->get());
+        return response()->json(
+              DB::table('guests')
+                  ->selectRaw('guests.*, temp_guest.first_name as plus_one_first_name, temp_guest.last_name as plus_one_last_name')
+                  ->leftJoin('guests as temp_guest', 'temp_guest.id', '=', 'guests.guest_id')
+                  ->where('guests.last_name', 'LIKE', "%{$request->get('search')}%")
+                  ->where(function ($query) {
+                      $query->whereRaw('temp_guest.id > guests.id')
+                          ->orWhereNull('temp_guest.id');
+                  })
+                  ->get()
+          );
     }
 
     /**
