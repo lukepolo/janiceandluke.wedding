@@ -96,7 +96,9 @@
     <section id="Travel" class="section section-large travel">
       <div class="section--content">
         <h1 class="secondary">
-          <span class="heading-small">Travel & Accommodations</span>
+          <span class="heading-small"
+            >Travel <span class="hide-small">& Accommodations</span></span
+          >
         </h1>
 
         <div class="travel-split">
@@ -136,7 +138,19 @@
             </p>
 
             <h3>Things to Do</h3>
-            <p>find things</p>
+            <ul>
+              <li>
+                The Oakwood Resort provides kayaks, bikes, & paddleboards on a
+                first come basis.
+                <a
+                  href="https://oakwoodresort.com/outdoor-activities/"
+                  target="_blank"
+                  >Vist their website</a
+                >
+                for all the other options they offer!
+              </li>
+              <li></li>
+            </ul>
           </div>
         </div>
       </div>

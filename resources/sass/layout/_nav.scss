@@ -87,6 +87,7 @@
     &--left {
       flex-basis: 100%;
       text-align: center;
+      padding-bottom: 5px;
     }
 
     &--right {
@@ -95,7 +96,7 @@
     }
 
     &--item {
-      padding: 0 5px 15px;
+      padding: 15px 5px;
     }
   }
 }
