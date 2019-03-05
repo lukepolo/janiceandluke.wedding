@@ -39,8 +39,8 @@ class ImportInviteListSeeder extends Seeder
             ],
             [
                 'guest_id' => 3,
-                'first_name' => 'Erica',
-                'last_name' => 'Barios',
+                'first_name' => 'Erika',
+                'last_name' => 'Barrios',
                 'allowed_guest' => false,
                 'allowed_rehearsal_dinner' => true,
 

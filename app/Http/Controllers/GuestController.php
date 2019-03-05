@@ -43,7 +43,10 @@ class GuestController extends Controller
                       '
                   )
                   ->leftJoin('guests as temp_guest', 'temp_guest.id', '=', 'guests.guest_id')
-                  ->where('guests.last_name', 'LIKE', "%{$this->escapeLike($request->get('search'))}%")
+                  ->where(function ($query) use ($request) {
+                      $query->where('guests.last_name', 'LIKE', "%{$this->escapeLike($request->get('search'))}%")
+                          ->orWhere('temp_guest.last_name', 'LIKE', "%{$this->escapeLike($request->get('search'))}%");
+                  })
                   ->where(function ($query) {
                       $query->where(function ($query) {
                           $query->whereRaw('temp_guest.id > guests.id');
