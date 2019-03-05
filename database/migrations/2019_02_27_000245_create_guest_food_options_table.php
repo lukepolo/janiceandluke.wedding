@@ -18,6 +18,7 @@ class CreateGuestFoodOptionsTable extends Migration
             $table->integer('guest_id');
             $table->json('wedding_selection');
             $table->json('rehearsal_selection')->nullable();
+            $table->text('dietary_restrictions')->nullable();
             $table->timestamps();
         });
     }

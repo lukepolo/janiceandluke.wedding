@@ -12,4 +12,14 @@ class Guest extends Model
     {
         return $this->belongsTo(Guest::class);
     }
+
+    public function rsvp()
+    {
+        return $this->hasOne(GuestRsvp::class);
+    }
+
+    public function foodOptions()
+    {
+        return $this->hasOne(GuestFoodOption::class);
+    }
 }
