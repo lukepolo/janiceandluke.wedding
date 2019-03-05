@@ -24,8 +24,10 @@
         </div>
 
         <div class="flyform--btns">
-          <button class="btn--link" :disabled="canSubmit">Back</button>
-          <button class="btn">Send RSVP</button>
+          <router-link :to="{ name: 'RSVP' }" class="btn--link"
+            >Back</router-link
+          >
+          <button class="btn" :disabled="canSubmit">Send RSVP</button>
         </div>
       </div>
     </form>
@@ -144,6 +146,9 @@ export default Vue.extend({
       }
       return false;
     },
+  },
+  destroyed() {
+    this.$store.commit("guest/setGuest", null);
   },
 });
 </script>

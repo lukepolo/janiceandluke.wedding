@@ -72,9 +72,9 @@
             </div>
           </template>
           <div class="flyform--btns">
-            <button class="btn--link" @click.prevent.stop="resetResults">
+            <div class="btn--link" @click.prevent.stop="resetResults">
               Back
-            </button>
+            </div>
             <button class="btn" :disabled="!selectedGuestForm.isValid()">
               Next
             </button>
@@ -93,6 +93,10 @@ export default Vue.extend({
     return {
       selectedGuestForm: this.createForm({
         guest: null,
+      }).validation({
+        rules: {
+          guest: "required",
+        },
       }),
       searchForm: this.createForm({
         search: null,
@@ -102,6 +106,14 @@ export default Vue.extend({
         },
       }),
     };
+  },
+  watch: {
+    $route: {
+      immediate: true,
+      handler() {
+        this.searchForm.reset();
+      },
+    },
   },
   methods: {
     search() {
@@ -116,7 +128,6 @@ export default Vue.extend({
       });
     },
     resetResults() {
-      console.info("reset");
       this.$store.commit("guest/setSearchResults", null);
     },
   },
