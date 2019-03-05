@@ -434,7 +434,7 @@ export default Vue.extend({
         animation: google.maps.Animation.DROP,
         icon: {
           url: require("./../../../img/map-icons/star-full.svg"),
-          scaledSize: new google.maps.Size(25, 25),
+          scaledSize: new google.maps.Size(35, 35),
           fillColor: "#1077aa",
           fillOpacity: 1,
           strokeColor: "#1077aa",
