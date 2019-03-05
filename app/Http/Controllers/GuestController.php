@@ -32,12 +32,23 @@ class GuestController extends Controller
     {
         return response()->json(
               DB::table('guests')
-                  ->selectRaw('guests.*, temp_guest.first_name as plus_one_first_name, temp_guest.last_name as plus_one_last_name')
+                  ->selectRaw(
+                      '
+                      guests.id, 
+                      CASE
+                        WHEN guests.last_name = temp_guest.last_name THEN CONCAT(guests.first_name, " & ", temp_guest.first_name, " ", guests.last_name)
+                        WHEN guests.last_name != temp_guest.last_name THEN CONCAT(guests.first_name, " ", guests.last_name, " & ", temp_guest.first_name, " ", temp_guest.last_name)
+                        ELSE CONCAT(guests.first_name, " ", guests.last_name)
+                      END as guest_name
+                      '
+                  )
                   ->leftJoin('guests as temp_guest', 'temp_guest.id', '=', 'guests.guest_id')
                   ->where('guests.last_name', 'LIKE', "%{$request->get('search')}%")
                   ->where(function ($query) {
-                      $query->whereRaw('temp_guest.id > guests.id')
-                          ->orWhereNull('temp_guest.id');
+                      $query->where(function ($query) {
+                          $query->whereRaw('temp_guest.id < guests.id')
+                              ->orWhereRaw('temp_guest.id > guests.id');
+                      })->orWhereNull('temp_guest.id');
                   })
                   ->get()
           );
