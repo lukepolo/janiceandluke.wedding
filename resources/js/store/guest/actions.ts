@@ -17,5 +17,40 @@ export default function(guestService: GuestService) {
         return data;
       });
     },
+    update: (
+      context: ActionContext<GuestState, RootState>,
+      { guestForm, plusOneForm },
+    ) => {
+      let requests = [];
+      requests.push(
+        new Promise((resolve, reject) => {
+          guestService
+            .update(guestForm.guest, guestForm)
+            .then(({ data }) => {
+              resolve(data);
+            })
+            .catch((error) => {
+              reject(error);
+            });
+        }),
+      );
+
+      if (plusOneForm) {
+        requests.push(
+          new Promise((resolve, reject) => {
+            guestService
+              .update(plusOneForm.guest, plusOneForm)
+              .then(({ data }) => {
+                resolve(data);
+              })
+              .catch((error) => {
+                reject(error);
+              });
+          }),
+        );
+      }
+
+      return Promise.all(requests);
+    },
   };
 }

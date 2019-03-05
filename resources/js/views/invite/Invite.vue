@@ -7,7 +7,7 @@
       <div class="gradient-box gradient-box-darkest"></div>
     </div>
 
-    <form @sumit.prevent="updateRsvp" class="section section-large">
+    <form @submit.prevent="updateRsvp" class="section section-large">
       <div class="section--content">
         <h1 class="secondary">My Invitation</h1>
         <div class="invite">
@@ -68,8 +68,17 @@ export default Vue.extend({
   },
   methods: {
     updateRsvp() {
-      console.info(this.guestForm.data());
-      console.info(this.plusOneForm.data());
+      this.$store
+        .dispatch("guest/update", {
+          guestForm: this.guestForm.data(),
+          plusOneForm: this.plusOneForm && this.plusOneForm.data(),
+        })
+        .then(() => {
+          alert("success");
+        })
+        .catch(() => {
+          this.alertService.info("info message", "This is an Info Alert");
+        });
     },
     createGuestForm(guest) {
       return this.createForm({
