@@ -24,6 +24,7 @@
               placeholder=" "
               validate
               @keydown="resetResults"
+              v-focus
             />
             <label for="lastName">Last Name</label>
           </div>
