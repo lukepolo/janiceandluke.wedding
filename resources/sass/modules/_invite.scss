@@ -3,9 +3,11 @@
 .invite {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 
   &--item {
     flex: 1 1 400px;
+    max-width: 800px;
     margin: 0 40px;
   }
 
