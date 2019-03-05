@@ -11,5 +11,11 @@ export default function(guestService: GuestService) {
         return data;
       });
     },
+    show: (context: ActionContext<GuestState, RootState>, guest) => {
+      return guestService.show(guest).then(({ data }) => {
+        context.commit("setGuest", data);
+        return data;
+      });
+    },
   };
 }

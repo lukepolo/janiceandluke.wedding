@@ -22,6 +22,6 @@ class GuestController extends Controller
      */
     public function show($id)
     {
-        return response()->json(Guest::findOrFail($id));
+        return response()->json(Guest::with(['guest'])->findOrFail($id));
     }
 }
