@@ -72,9 +72,9 @@
             </div>
           </template>
           <div class="flyform--btns">
-            <div class="btn--link" @click.prevent.stop="resetResults">
+            <span class="btn--link" @click.prevent.stop="resetResults">
               Back
-            </div>
+            </span>
             <button class="btn" :disabled="!selectedGuestForm.isValid()">
               Next
             </button>
