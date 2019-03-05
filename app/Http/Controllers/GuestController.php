@@ -43,11 +43,10 @@ class GuestController extends Controller
                       '
                   )
                   ->leftJoin('guests as temp_guest', 'temp_guest.id', '=', 'guests.guest_id')
-                  ->where('guests.last_name', 'LIKE', "%{$request->get('search')}%")
+                  ->where('guests.last_name', 'LIKE', "%{$this->escapeLike($request->get('search'))}%")
                   ->where(function ($query) {
                       $query->where(function ($query) {
-                          $query->whereRaw('temp_guest.id < guests.id')
-                              ->orWhereRaw('temp_guest.id > guests.id');
+                          $query->whereRaw('temp_guest.id > guests.id');
                       })->orWhereNull('temp_guest.id');
                   })
                   ->get()
@@ -80,5 +79,19 @@ class GuestController extends Controller
         $this->guestService->updateFoodOptions($guest, collect($request->get('guest_food_option')));
 
         return response($guest);
+    }
+
+    /**
+     * @param string $value
+     * @param string $char
+     * @return string
+     */
+    private function escapeLike(string $value, string $char = '\\'): string
+    {
+        return str_replace(
+            [$char, '%', '_'],
+            [$char.$char, $char.'%', $char.'_'],
+            $value
+        );
     }
 }
