@@ -69,6 +69,10 @@
                   :value="result.id"
                 />
                 {{ result.first_name }} {{ result.last_name }}
+                <template v-if="result.plus_one_first_name">
+                  & {{ result.plus_one_first_name }}
+                  {{ result.plus_one_last_name }}
+                </template>
               </label>
             </div>
           </template>
