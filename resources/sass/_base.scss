@@ -156,11 +156,20 @@ h6 {
   }
 }
 
+@include breakpoint(sm) {
+  .secondary {
+    font-size: 32px;
+  }
+}
+
+h4 {
+  line-height: 1.4em;
+}
+
 // LINKS ---------------------------------------------------
 // ---------------------------------------------------------
 a {
   color: $color-link;
-  letter-spacing: 2px;
   text-decoration: none;
 
   &:active,
@@ -188,6 +197,9 @@ ul {
 }
 
 li {
+  line-height: 1.4em;
+  text-align: left;
+  margin-bottom: 10px;
 }
 
 // TABLES --------------------------------------------------
@@ -203,4 +215,25 @@ th {
 }
 
 tr {
+}
+
+// OUTDATED MESSAGE ----------------------------------------
+// ---------------------------------------------------------
+.outdated {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $color-accent-light;
+  color: $color-text-inverse-primary;
+  z-index: 999999;
+
+  p {
+    margin-top: 0;
+  }
 }

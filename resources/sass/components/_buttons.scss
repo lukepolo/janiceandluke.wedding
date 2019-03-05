@@ -1,0 +1,81 @@
+// BUTTON STYLES ===========================================
+// =========================================================
+@mixin button-outline($color, $color-hover) {
+  background-color: $color-background;
+  color: $color;
+  font-weight: 900;
+  border: 2px solid $color;
+  border-radius: 6px;
+  padding: 15px 25px;
+  transform: scale(1);
+  transition: all 0.3s ease;
+
+  &:active,
+  &:focus,
+  &:hover {
+    cursor: pointer;
+    outline: none;
+    color: $color-hover;
+    border-color: $color-hover;
+    text-decoration: none;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+
+    &:after {
+      height: 10px;
+      transition: all 0.3s ease;
+    }
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $color;
+    border-radius: 0 0 4px 4px;
+    height: 0;
+    transition: all 0.3s ease;
+  }
+}
+
+.btn {
+  @include button-outline($color-link, $color-link-hover);
+
+  // Add styles for all color variations in $states
+  @each $state, $color in $states {
+    &-#{$state} {
+      @include button-outline($color, mix($color, $black, 80%));
+    }
+  }
+}
+
+.btn-large {
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 5px;
+}
+
+[class^="btn"] + [class^="btn"],
+[class*=" btn"] + [class*=" btn"] {
+  margin-left: 15px;
+}
+
+// BUTTON LINKS
+.btn--link {
+  background: none;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: $color-text-secondary;
+
+  &:active,
+  &:focus,
+  &:hover {
+    outline: none;
+    color: $color-text-primary;
+    cursor: pointer;
+  }
+}

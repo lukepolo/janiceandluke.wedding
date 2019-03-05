@@ -2,16 +2,28 @@
 // =========================================================
 
 // LAYOUT MODULES
-@import "modules/header";
-@import "modules/nav";
-@import "modules/footer";
-@import "modules/fonts";
+@import "layout/nav";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/fonts";
+
+// COMPONENT MODULES
+@import "components/forms";
+@import "components/lists";
+@import "components/alerts";
+@import "components/banner";
+@import "components/toggle";
+@import "components/buttons";
+@import "components/gradient";
 
 // CONTENT MODULES
 @import "modules/section";
-@import "modules/buttons";
-@import "modules/gradient";
 @import "modules/photos";
 @import "modules/callout";
-@import "modules/forms";
-@import "modules/toggle";
+
+// SECTIONS
+@import "modules/map";
+@import "modules/rsvp";
+@import "modules/travel";
+@import "modules/registry";
+@import "modules/invite";

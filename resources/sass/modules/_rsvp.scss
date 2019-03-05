@@ -1,0 +1,21 @@
+// RSVP SECTION ============================================
+// =========================================================
+.rsvp {
+  .section--content {
+    display: flex;
+    align-self: center;
+  }
+
+  .callout {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  &-page {
+    @include breakpoint(sm) {
+      .section--content:first-child {
+        padding-top: 0;
+      }
+    }
+  }
+}

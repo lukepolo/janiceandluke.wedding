@@ -1,0 +1,35 @@
+// INVITE SECTION ==========================================
+// =========================================================
+.invite {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &--item {
+    flex: 1 1 400px;
+    max-width: 800px;
+    margin: 0 40px;
+  }
+
+  &--section {
+    &-secondary {
+      border-left: 6px solid $color-accent-lightest;
+      margin-top: 50px;
+      padding: 0 0 0 30px;
+    }
+  }
+}
+
+@include breakpoint(sm) {
+  .invite {
+    &--item {
+      margin: 0;
+    }
+
+    &--section {
+      &-secondary {
+        padding-left: 20px;
+      }
+    }
+  }
+}
