@@ -1,0 +1,51 @@
+// ALERT STYLES ============================================
+// =========================================================
+.alerts {
+  top: 54px !important;
+  width: 280px !important;
+
+  > span {
+    display: block;
+  }
+
+  @include breakpoint(sm) {
+    top: 90px !important;
+  }
+}
+
+.alert {
+  background-color: $color-state-neutral;
+
+  &-heading {
+    font-weight: 400 !important;
+    letter-spacing: 1px;
+    padding-right: 15px;
+  }
+
+  &-text {
+    font-weight: 300 !important;
+    letter-spacing: 0.7px;
+  }
+
+  &-close {
+    color: rgba($color-text-inverse-primary, 0.5);
+
+    &:hover {
+      color: $color-text-inverse-primary !important;
+      cursor: pointer;
+    }
+  }
+
+  &.info {
+    margin-top: 0;
+    background-color: $color-state-primary !important;
+  }
+
+  &.success {
+    background-color: $color-state-success !important;
+  }
+
+  &.error {
+    background-color: $color-state-danger !important;
+  }
+}
