@@ -37,6 +37,7 @@ class GuestController extends Controller
                       guests.id, 
                       CASE
                         WHEN guests.last_name = temp_guest.last_name THEN CONCAT(guests.first_name, " & ", temp_guest.first_name, " ", guests.last_name)
+                        WHEN guests.last_name != temp_guest.last_name THEN CONCAT(guests.first_name, " ", guests.last_name, " & ", temp_guest.first_name, " ", temp_guest.last_name)
                         ELSE CONCAT(guests.first_name, " ", guests.last_name)
                       END as guest_name
                       '
