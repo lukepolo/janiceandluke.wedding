@@ -5,71 +5,54 @@
   &-split {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
   }
 
-  &--text {
-    flex: 1 1 380px;
-    margin: 0 20px;
+  &--section {
+    flex: 1 0 390px;
     padding: 0 20px;
+    text-align: left;
+  }
+
+  &--callout {
+    text-align: center;
+    color: $color-text-inverse-primary;
+    letter-spacing: 2px;
+    background-color: $color-accent-light;
+    margin: 0 -10px;
+    padding: 20px 40px;
+
+    h3 {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
   }
 
   &--img {
     flex: 1 1 380px;
-    margin: 0 20px;
-    position: relative;
+    margin: 0 20px -5px;
 
     img {
       border-top-left-radius: 190px 160px;
     }
-
-    &-text {
-      background-color: $color-accent-light;
-      color: $color-text-inverse-primary;
-      letter-spacing: 2px;
-      margin: -5px -30px 0;
-      padding: 20px 40px;
-
-      h3 {
-        margin-top: 0;
-      }
-
-      p {
-        margin-bottom: 0;
-      }
-    }
-  }
-}
-
-@include breakpoint(500px) {
-  .travel--img,
-  .travel--text {
-    margin: 0;
-    padding: 0;
-  }
-
-  .travel--img-text {
-    position: initial;
   }
 }
 
 @include breakpoint(sm) {
   .travel {
-    margin-left: 0;
-
-    .section--content > h3,
-    .section--content > p {
-      margin-left: 0;
+    &--section {
+      padding: 0;
+      flex-shrink: 1;
     }
 
-    &--img-text {
-      padding-left: 5px;
-      padding-right: 5px;
-      margin: -4px -10px 0;
+    &--callout {
+      font-size: 0.8em;
     }
 
-    .heading-small {
-      font-size: 24px;
+    &--img img {
+      border-top-left-radius: 80px 80px;
     }
   }
 }

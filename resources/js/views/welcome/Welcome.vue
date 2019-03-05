@@ -96,13 +96,22 @@
     <section id="Travel" class="section section-large travel">
       <div class="section--content">
         <h1 class="secondary">
-          Travel <span class="hide-small">& Accommodations</span>
+          Travel
         </h1>
 
         <div class="travel-split">
-          <div class="travel--img">
-            <img src="../../../img/oakwood2.jpg" />
-            <div class="travel--img-text">
+          <div class="travel--section">
+            <h3>Accommodations</h3>
+            <p>
+              We have reserved a block of rooms at The Oakwood Resort. Wedding
+              guests will receive a discounted rate. Please call and reference
+              the Falotico / Policinski wedding when making your reservations.
+              We recommend booking early, as we expect rooms to fill up quickly.
+            </p>
+            <div class="travel--img">
+              <img src="../../../img/oakwood2.jpg" />
+            </div>
+            <div class="travel--callout">
               <h3 class="primary" style="margin-bottom: -35px;">
                 Oakwood Re<span class="left-s">s</span>or<span class="left-t"
                   >t</span
@@ -127,19 +136,27 @@
             </div>
           </div>
 
-          <div class="travel--text">
-            <p>
-              We have reserved a block of rooms at The Oakwood Resort. Wedding
-              guests will receive a discounted rate. Please call and reference
-              the Falotico / Policinski wedding when making your reservations.
-              We recommend booking early, as we expect rooms to fill up quickly.
-            </p>
-
+          <div class="travel--section">
             <h3>Things to Do</h3>
+            <ul class="list-header">
+              <li>
+                Wanting to stay in?
+              </li>
+            </ul>
             <ul>
               <li>
                 The Oakwood Resort provides kayaks, bikes, & paddleboards on a
                 first come basis.
+              </li>
+              <li>
+                Get sporty with basketball, frisbee, cornhole, and even giant
+                Jenga!
+              </li>
+              <li>
+                They even have s'mores available at the front desk to roast over
+                the fire pit.
+              </li>
+              <li>
                 <a
                   href="https://oakwoodresort.com/outdoor-activities/"
                   target="_blank"
@@ -147,7 +164,45 @@
                 >
                 for all the other options they offer!
               </li>
-              <li></li>
+            </ul>
+            <ul class="list-header">
+              <li>
+                Aching to get out?
+              </li>
+            </ul>
+            <ul>
+              <li>
+                Grab a drink at
+                <a href="https://www.tippycreekwinery.com/" target="_blank"
+                  >Tippy Creek Winery</a
+                >, or for the beer lovers check out
+                <a href="https://www.hoplore.com/" target="_blank">Hoplore</a>
+                or
+                <a href="http://mancavebrewing.com/" target="_blank"
+                  >Man Cave Brewing</a
+                >.
+              </li>
+              <li>
+                Have a bit more time? Explore Amish Country in
+                <a
+                  href="https://visitshipshewana.org/listing/2190/Menno-Hof/?gclid=Cj0KCQiAtvPjBRDPARIsAJfZz0oyft5qllgx1eN1kystJ5CE1aRJVYaoyk7QoMdSCKi0SP9Rai3OiQkaAsLOEALw_wcB"
+                  target="_blank"
+                  >Shipshewana</a
+                >
+                or
+                <a href="http://www.amishacres.com/" target="_blank"
+                  >Amish Acres</a
+                >.
+              </li>
+              <li>
+                Go golfing, check out an anqiue shop, or take a boat ride on
+                lake Wawasee!
+                <a
+                  href="https://oakwoodresort.com/nearby-attractions/"
+                  target="_blank"
+                  >Check out all the nearby activites</a
+                >.
+              </li>
             </ul>
           </div>
         </div>
