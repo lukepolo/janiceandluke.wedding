@@ -42,7 +42,6 @@ class GuestImport implements ToCollection
                         !empty($row[3]),
                         $row[7] === "TRUE",
                         $rowIndex + 1,
-                        empty($row[8]),
                         $connectedGuest
                     );
                 }
@@ -50,21 +49,15 @@ class GuestImport implements ToCollection
         }
     }
 
-    private function createGuest($firstName, $lastName, $allowedGuest, $allowedRehearsalDinner, $externalId, $invited, Guest $connectedGuest = null)
+    private function createGuest($firstName, $lastName, $allowedGuest, $allowedRehearsalDinner, $invited, Guest $connectedGuest = null)
     {
-        $guest = Guest::withTrashed()->firstOrNew([
-            'external_id' => $externalId,
+        $guest = Guest::withTrashed()->create([
             'last_name' => $lastName,
             'first_name' => $firstName,
-        ]);
-
-        $guest->fill([
             'allowed_guest' => $allowedGuest,
             'allowed_rehearsal_dinner' => $allowedRehearsalDinner,
             'guest_id' => !empty($connectedGuest) ? $connectedGuest->id : null,
         ]);
-
-        $guest->save();
 
         if (!$invited) {
             $guest->delete();

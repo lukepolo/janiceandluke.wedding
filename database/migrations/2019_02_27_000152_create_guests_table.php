@@ -23,8 +23,6 @@ class CreateGuestsTable extends Migration
 
             $table->boolean('allowed_rehearsal_dinner')->default(0);
 
-            $table->integer('external_id');
-
             $table->softDeletes();
             $table->timestamps();
         });
