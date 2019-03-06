@@ -19,7 +19,6 @@ class CreateGuestsTable extends Migration
             $table->string('last_name');
 
             $table->integer('guest_id')->nullable();
-            $table->boolean('is_guest')->default(0);
             $table->boolean('allowed_guest')->default(0);
 
             $table->boolean('allowed_rehearsal_dinner')->default(0);
