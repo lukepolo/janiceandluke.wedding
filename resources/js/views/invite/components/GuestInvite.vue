@@ -5,7 +5,7 @@
         {{ guest.first_name }} {{ guest.last_name }}
       </template>
       <template v-else>
-        +1
+        Guest
       </template>
     </h3>
     <hr />
