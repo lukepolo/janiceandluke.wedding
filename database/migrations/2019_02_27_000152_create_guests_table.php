@@ -25,6 +25,7 @@ class CreateGuestsTable extends Migration
 
             $table->integer('external_id');
 
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -52,6 +52,8 @@ class GuestController extends Controller
                           $query->whereRaw('temp_guest.id < guests.id');
                       })->orWhereNull('temp_guest.id');
                   })
+                  ->whereNull('guests.deleted_at')
+                  ->whereNull('temp_guest.deleted_at')
                   ->get()
           );
     }
