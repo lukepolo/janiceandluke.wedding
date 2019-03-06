@@ -420,47 +420,6 @@ export default Vue.extend({
         },
       ],
     });
-    this.addMarkers();
-  },
-  methods: {
-    addMarkers() {
-      let marker = new google.maps.Marker({
-        map: this.map,
-        zIndex: 12312321,
-        position: {
-          lat: 41.4086861,
-          lng: -85.73485939999999,
-        },
-        animation: google.maps.Animation.DROP,
-        icon: {
-          url: require("./../../../img/map-icons/star-full.svg"),
-          scaledSize: new google.maps.Size(35, 35),
-          fillColor: "#1077aa",
-          fillOpacity: 1,
-          strokeColor: "#1077aa",
-        },
-      });
-
-      marker.addListener("click", () => {
-        new google.maps.InfoWindow({
-          content: `
-            <div class="title full-width">Oakwood Resort</div>
-                <div class="address">
-                <div class="address-line full-width">702 E Lake View Rd</div>
-                <div class="address-line full-width">Syracuse, IN 46567</div>
-            </div>
-
-            </div>
-                <div class="view-link">
-                    <a target="_blank" href="https://maps.google.com/maps?ll=41.40861,-85.734859&amp;z=16&amp;t=m&amp;hl=en-US&amp;gl=US&amp;mapclient=apiv3&amp;cid=16636822861888824603">
-                        <span> View on Google Maps </span>
-                    </a>
-                </div>
-            </div>
-          `,
-        }).open(this.map, marker);
-      });
-    },
   },
 });
 </script>
