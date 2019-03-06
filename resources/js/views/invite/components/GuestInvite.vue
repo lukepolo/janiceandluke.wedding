@@ -1,6 +1,13 @@
 <template>
   <div class="invite--item" v-if="guest">
-    <h3>{{ guest.first_name }} {{ guest.last_name }}</h3>
+    <h3>
+      <template v-if="!guest.is_guest">
+        {{ guest.first_name }} {{ guest.last_name }}
+      </template>
+      <template v-else>
+        +1
+      </template>
+    </h3>
     <hr />
 
     <div class="invite--section">

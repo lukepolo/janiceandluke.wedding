@@ -20,6 +20,9 @@ class GuestImport implements ToCollection
             // 7 = rehearsal dinner
             // 8 = invited
 
+            $allowedGuest = !empty($row[3]);
+            $allowedRehersalDinner = $row[7] === "TRUE";
+
             $guestNames = array_reverse(
                 array_map(
                     'trim',
@@ -39,17 +42,29 @@ class GuestImport implements ToCollection
                     $connectedGuest = $this->createGuest(
                         $firstName,
                         $lastName,
-                        !empty($row[3]),
-                        $row[7] === "TRUE",
+                        $allowedGuest,
+                        $allowedRehersalDinner,
                         $rowIndex + 1,
                         $connectedGuest
                     );
+
+                    if ($allowedGuest) {
+                        $this->createGuest(
+                            "+1",
+                            $lastName,
+                            false,
+                            $allowedRehersalDinner,
+                            $rowIndex + 1,
+                            $connectedGuest,
+                            true
+                        );
+                    }
                 }
             }
         }
     }
 
-    private function createGuest($firstName, $lastName, $allowedGuest, $allowedRehearsalDinner, $invited, Guest $connectedGuest = null)
+    private function createGuest($firstName, $lastName, $allowedGuest, $allowedRehearsalDinner, $invited, Guest $connectedGuest = null, $isGuest = false)
     {
         $guest = Guest::withTrashed()->create([
             'last_name' => $lastName,
@@ -57,6 +72,7 @@ class GuestImport implements ToCollection
             'allowed_guest' => $allowedGuest,
             'allowed_rehearsal_dinner' => $allowedRehearsalDinner,
             'guest_id' => !empty($connectedGuest) ? $connectedGuest->id : null,
+            'is_guest' => $isGuest,
         ]);
 
         if (!$invited) {
