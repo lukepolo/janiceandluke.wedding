@@ -43,7 +43,7 @@ class GuestImport implements ToCollection
 
     private function createGuest($firstName, $lastName, $allowedGuest, $allowedRehearsalDinner, Guest $connectedGuest = null)
     {
-        $guest = Guest::firstOrCreate([
+        $guest = Guest::create([
             'first_name' => $firstName,
             'last_name' => $lastName,
         ]);
