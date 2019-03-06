@@ -83,7 +83,7 @@ class GuestController extends Controller
         try {
             $this->guestService->updateRsvp($guest, collect($request->get('guest_rsvp')));
         } catch (NotAllowedRehearsalDinner $e) {
-            return response()->json('Sorry, you were not invited to the rehearsal dinner.');
+            return response()->json('Sorry, you were not invited to the rehearsal dinner.', 403);
         }
 
         $this->guestService->updateFoodOptions($guest, collect($request->get('guest_food_option')));

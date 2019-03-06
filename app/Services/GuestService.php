@@ -22,7 +22,7 @@ class GuestService
             'guest_id' => $guest->id
         ]);
 
-        if ($data->has('attending_rehearsal_dinner')) {
+        if ($data->get('attending_rehearsal_dinner')) {
             if (!$guest->allowed_rehearsal_dinner) {
                 throw new NotAllowedRehearsalDinner();
             }
