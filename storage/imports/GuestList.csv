@@ -50,7 +50,7 @@ Westhampnett
 Chichester
 P018 0FS
 ENGLAND",FALSE,
-FALSE,Josh Woodcock & May Knura,1,1,Janice's Friend,Definitely,"Rügener Weg 1
+FALSE,Josh Woodcock & May Knura,1,,Janice's Friend,Definitely,"Rügener Weg 1
 17493
 Greifswald 
 German",FALSE,
@@ -90,7 +90,7 @@ FALSE,Jay & Monica O’Neil,2,,Luke's Family,Definitely,"246 Teak Lane  Stream
 FALSE,Gene & Kathy Policinski,2,,Luke's Family,Definitely,"555 Pennsylvania Ave NW #808 Washington DC 20001",FALSE,
 FALSE,Chris & Anne Policinski,2,,Luke's Family,Definitely,"450 Old Long Lake Rd Wayzata, MN  55391",FALSE,
 FALSE,Ellen Policinski,1,1,Luke's Family,Definitely,"Rue Charles-Giton 27 Geneva 1203  Switzerland",FALSE,
-FALSE,John Policinski & Molly Doboszenski,1,1,Luke's Family,Definitely,"1218 W. Diversey Pkwy Apt.3  Chicago, IL 60614",FALSE,
+FALSE,John Policinski & Molly Doboszenski,1,,Luke's Family,Definitely,"1218 W. Diversey Pkwy Apt.3  Chicago, IL 60614",FALSE,
 FALSE,Kenny & Kim Fergurson,2,,Luke's Family,Definitely,,FALSE,
 FALSE,AJ Fergurson,1,1,Luke's Family,Definitely,,FALSE,
 FALSE,Tamie & Steve Moore,2,,Luke's Family,Definitely,,FALSE,
@@ -100,16 +100,16 @@ FALSE,Jim & Dale Becher,2,,Luke's Family Friend,Definitely,,FALSE,
 FALSE,Michelle & Chris Martin,2,,Luke's Family Friend,Maybe,,FALSE,
 FALSE,Miranda McCormick & Ryan Newman,2,,Luke's Friend,Definitely,"6332 Burlington Avenue Indianapolis, IN 46220",TRUE,
 FALSE,"Justin Humphries & Rachel O'Brien-Yablonsky
-",1,1,Luke's Friend,Definitely,"2025 Braemar Dr  Fort Wayne, IN 46814",TRUE,
+",1,,Luke's Friend,Definitely,"2025 Braemar Dr  Fort Wayne, IN 46814",TRUE,
 FALSE,Casey Hobbs,1,1,Luke's Friend,Definitely,"4203 N Marshall Rd  Marshall, IN 47859",FALSE,
 FALSE,Joe Rust,1,1,Luke's Friend,Definitely,,FALSE,
-FALSE,Caleb Asbury & Amanda Smith,1,1,Luke's Friend,Definitely,"2248 Rippling Way South, Apt B
+FALSE,Caleb Asbury & Amanda Smith,1,,Luke's Friend,Definitely,"2248 Rippling Way South, Apt B
 Indianapolis IN 46260",TRUE,
 FALSE,Tony Krause,1,1,Luke's Friend,Definitely,"213 W North St #302
 Indianapolis, IN 46202",TRUE,
 FALSE,Nick & Emily King,2,,Luke's Friend,Definitely,"1601 N Rhodes St Apt 202  Arlington va 22209",FALSE,
 FALSE,Gabe & Rachel Rangel,2,,Luke's Friend,Definitely,"63 Nottinghill Road #7  Boston, MA 02135",FALSE,
-FALSE,David Andrews & Chrizia Dela rosa,1,1,Luke's Friend,Definitely,"489 El Cajon Dr.
+FALSE,David Andrews & Chrizia Dela rosa,1,,Luke's Friend,Definitely,"489 El Cajon Dr.
 San Jose, CA 95111",TRUE,
 FALSE,Miles & Shannon North,2,,Luke's Friend,Definitely,"105E Mason Row
 Yorktown, VA 23691",TRUE,
@@ -134,4 +134,4 @@ FALSE,,,,,,,FALSE,
 FALSE,,,,,,,FALSE,
 FALSE,,,,,,,FALSE,
 FALSE,,,,,,,FALSE,
-,Guest Count,141,23,,,,,
+,Guest Count,141,18,,,,,

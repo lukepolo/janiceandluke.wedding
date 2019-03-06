@@ -35,20 +35,21 @@ class GuestImport implements ToCollection
                     if (isset($nameParts[1])) {
                         $lastName = $nameParts[1]. (isset($nameParts[2]) ? ' '.$nameParts[2] : null);
                     }
-                    $connectedGuest = $this->createGuest($firstName, $lastName, !empty($row[3]), $row[7] === "TRUE", $connectedGuest);
+                    $connectedGuest = $this->createGuest($firstName, $lastName, !empty($row[3]), $row[7] === "TRUE", $rowIndex + 1, $connectedGuest);
                 }
             }
         }
     }
 
-    private function createGuest($firstName, $lastName, $allowedGuest, $allowedRehearsalDinner, Guest $connectedGuest = null)
+    private function createGuest($firstName, $lastName, $allowedGuest, $allowedRehearsalDinner, $externalId, Guest $connectedGuest = null)
     {
-        $guest = Guest::create([
-            'first_name' => $firstName,
-            'last_name' => $lastName,
+        $guest = Guest::firstOrNew([
+            'external_id' => $externalId,
         ]);
 
         $guest->fill([
+            'last_name' => $lastName,
+            'first_name' => $firstName,
             'allowed_guest' => $allowedGuest,
             'allowed_rehearsal_dinner' => $allowedRehearsalDinner,
             'guest_id' => !empty($connectedGuest) ? $connectedGuest->id : null,
