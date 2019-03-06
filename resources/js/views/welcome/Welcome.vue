@@ -149,7 +149,7 @@
                 first come basis.
               </li>
               <li>
-                Get sporty with basketball, frisbee, cornhole, and even giant
+                Get sporty with basketball, frisbee, cornhole, and also giant
                 Jenga!
               </li>
               <li>
@@ -195,7 +195,7 @@
                 >.
               </li>
               <li>
-                Go golfing, check out an anqiue shop, or take a boat ride on
+                Go golfing, check out an antique shop, or take a boat ride on
                 lake Wawasee!
                 <a
                   href="https://oakwoodresort.com/nearby-attractions/"
