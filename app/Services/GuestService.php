@@ -22,11 +22,12 @@ class GuestService
             'guest_id' => $guest->id
         ]);
 
-        if ($data->get('attending_rehearsal_dinner')) {
-            if (!$guest->allowed_rehearsal_dinner) {
+        if ($data->has('attending_rehearsal_dinner')) {
+            $attendingRehearsalDinner = $data->get('attending_rehearsal_dinner');
+            if ($attendingRehearsalDinner && !$guest->allowed_rehearsal_dinner) {
                 throw new NotAllowedRehearsalDinner();
             }
-            $guestRsvp->attending_rehearsal_dinner = $data->get('attending_rehearsal_dinner');
+            $guestRsvp->attending_rehearsal_dinner = !empty($attendingRehearsalDinner) ? $attendingRehearsalDinner : false;
         }
 
         $guestRsvp->attending = $data->get('attending');

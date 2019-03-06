@@ -17,7 +17,7 @@ class CreateGuestRsvpsTable extends Migration
             $table->increments('id');
             $table->integer('guest_id');
             $table->boolean('attending')->default(0);
-            $table->boolean('attending_rehearsal_dinner')->default(0);
+            $table->boolean('attending_rehearsal_dinner')->default(false);
             $table->timestamps();
         });
     }
