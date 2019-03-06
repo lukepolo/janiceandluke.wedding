@@ -17,6 +17,7 @@ class GuestImport implements ToCollection
             // 1 = names
             // 2 = adults
             // 3 = allowed plus one
+            // 7 = rehearsal dinner
 
             $guestNames = array_reverse(
                 array_map(
@@ -32,9 +33,9 @@ class GuestImport implements ToCollection
                     $nameParts = preg_split('/\s/', $guestName);
                     $firstName = $nameParts[0];
                     if (isset($nameParts[1])) {
-                        $lastName = $nameParts[1];
+                        $lastName = $nameParts[1]. (isset($nameParts[2]) ? ' '.$nameParts[2] : null);
                     }
-                    $connectedGuest = $this->createGuest($firstName, $lastName, !empty($row[3]), true, $connectedGuest);
+                    $connectedGuest = $this->createGuest($firstName, $lastName, !empty($row[3]), $row[7] === "TRUE", $connectedGuest);
                 }
             }
         }
@@ -50,7 +51,7 @@ class GuestImport implements ToCollection
         $guest->fill([
             'allowed_guest' => $allowedGuest,
             'allowed_rehearsal_dinner' => $allowedRehearsalDinner,
-            'guest_id' => empty($connectedGuest) ? null : $connectedGuest->id,
+            'guest_id' => !empty($connectedGuest) ? $connectedGuest->id : null,
         ]);
 
         $guest->save();

@@ -14,6 +14,6 @@ class ImportInviteListSeeder extends Seeder
      */
     public function run()
     {
-        Excel::import(new GuestImport(), storage_path('imports/GuestList-5-4-2019.csv'));
+        Excel::import(new GuestImport(), storage_path('imports/GuestList.csv'));
     }
 }

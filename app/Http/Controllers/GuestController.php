@@ -49,7 +49,7 @@ class GuestController extends Controller
                   })
                   ->where(function ($query) {
                       $query->where(function ($query) {
-                          $query->whereRaw('temp_guest.id > guests.id');
+                          $query->whereRaw('temp_guest.id < guests.id');
                       })->orWhereNull('temp_guest.id');
                   })
                   ->get()
