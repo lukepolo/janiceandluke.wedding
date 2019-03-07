@@ -52,8 +52,9 @@
         <h1 class="secondary">RSVP</h1>
         <h2>Search for your Invitation</h2>
         <p>
-          We've found one possible match in the guest list. Please select your
-          party from the list below:
+          We've found <span v-if="results.length === 1">one possible match</span
+          ><span v-else>multiple matches</span> in the guest list. Please select
+          your party from the list below:
         </p>
 
         <form v-form="selectedGuestForm" @submit.prevent="selectGuest">

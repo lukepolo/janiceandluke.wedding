@@ -1,6 +1,9 @@
 <?php
 
+
+use App\Imports\GuestImport;
 use Illuminate\Database\Seeder;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ImportInviteListSeeder extends Seeder
 {
@@ -11,56 +14,6 @@ class ImportInviteListSeeder extends Seeder
      */
     public function run()
     {
-        // TODO - family members
-        $guests = [
-            [
-                'guest_id' => 2,
-                'first_name' => 'Pam',
-                'last_name' => 'Falotico',
-                'allowed_guest' => false,
-                'allowed_rehearsal_dinner' => true,
-
-            ],
-            [
-                'guest_id' => 1,
-                'first_name' => 'Jim',
-                'last_name' => 'Falotico',
-                'allowed_guest' => false,
-                'allowed_rehearsal_dinner' => true,
-
-            ],
-            [
-                'guest_id' => 4,
-                'first_name' => 'Billy',
-                'last_name' => 'Falotico',
-                'allowed_guest' => false,
-                'allowed_rehearsal_dinner' => true,
-
-            ],
-            [
-                'guest_id' => 3,
-                'first_name' => 'Erika',
-                'last_name' => 'Barrios',
-                'allowed_guest' => false,
-                'allowed_rehearsal_dinner' => true,
-
-            ],
-            [
-                'first_name' => 'Kari',
-                'last_name' => 'Policinski',
-                'allowed_guest' => true,
-                'allowed_rehearsal_dinner' => true,
-            ],
-            [
-                'first_name' => 'Some',
-                'last_name' => 'Policinski',
-                'allowed_guest' => true,
-                'allowed_rehearsal_dinner' => false,
-            ]
-        ];
-
-        foreach ($guests as $guest) {
-            \App\Models\Guest::create($guest);
-        }
+        Excel::import(new GuestImport(), storage_path('imports/GuestList.csv'));
     }
 }

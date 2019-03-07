@@ -34,8 +34,14 @@ class GuestController extends Controller
               DB::table('guests')
                   ->selectRaw(
                       '
-                      guests.id, 
+                       CASE
+                        WHEN temp_guest.id IS NULL THEN guests.id
+                        WHEN guests.is_guest = false THEN guests.id
+                        ELSE temp_guest.id
+                       END as id, 
                       CASE
+                        WHEN guests.last_name = temp_guest.last_name && temp_guest.deleted_at IS NOT NULL THEN CONCAT(guests.first_name, " ", guests.last_name)
+                        WHEN guests.last_name = temp_guest.last_name && guests.is_guest = true THEN CONCAT(temp_guest.first_name, " ", temp_guest.last_name, " (+1)")
                         WHEN guests.last_name = temp_guest.last_name THEN CONCAT(guests.first_name, " & ", temp_guest.first_name, " ", guests.last_name)
                         WHEN guests.last_name != temp_guest.last_name THEN CONCAT(guests.first_name, " ", guests.last_name, " & ", temp_guest.first_name, " ", temp_guest.last_name)
                         ELSE CONCAT(guests.first_name, " ", guests.last_name)
@@ -49,9 +55,10 @@ class GuestController extends Controller
                   })
                   ->where(function ($query) {
                       $query->where(function ($query) {
-                          $query->whereRaw('temp_guest.id > guests.id');
+                          $query->whereRaw('temp_guest.id < guests.id');
                       })->orWhereNull('temp_guest.id');
                   })
+                  ->whereNull('guests.deleted_at')
                   ->get()
           );
     }
@@ -76,7 +83,7 @@ class GuestController extends Controller
         try {
             $this->guestService->updateRsvp($guest, collect($request->get('guest_rsvp')));
         } catch (NotAllowedRehearsalDinner $e) {
-            return response()->json('Sorry, you were not invited to the rehearsal dinner.');
+            return response()->json('Sorry, you were not invited to the rehearsal dinner.', 403);
         }
 
         $this->guestService->updateFoodOptions($guest, collect($request->get('guest_food_option')));
