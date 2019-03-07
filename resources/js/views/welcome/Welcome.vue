@@ -108,31 +108,38 @@
               the Falotico / Policinski wedding when making your reservations.
               We recommend booking early, as we expect rooms to fill up quickly.
             </p>
-            <div class="travel--img">
-              <img src="../../../img/oakwood2.jpg" />
-            </div>
             <div class="travel--callout">
-              <h3 class="primary" style="margin-bottom: -35px;">
-                Oakwood Re<span class="left-s">s</span>or<span class="left-t"
-                  >t</span
-                >
-              </h3>
-              <p>
-                702 E. Lake View Rd <br />
-                Syracuse, IN 46567 <br />
-              </p>
-              <p>
-                <a href="tel:1-574-457-7100" class="a-inverse"
-                  >(574) 457-7100</a
-                >
-                <br />
-                <a
-                  href="http://oakwoodresort.com"
-                  target="blank"
-                  class="a-inverse"
-                  >oakwoodresort.com</a
-                >
-              </p>
+              <div class="gradient">
+                <div class="gradient-box gradient-box-lightest"></div>
+                <div class="gradient-box gradient-box-light"></div>
+                <div class="gradient-box gradient-box-dark"></div>
+                <div class="gradient-box gradient-box-darkest"></div>
+              </div>
+              <img src="../../../img/oakwood2.jpg" />
+
+              <div class="travel--callout-text">
+                <h3 class="primary" style="margin-bottom: -35px;">
+                  Oakwood Re<span class="left-s">s</span>or<span class="left-t"
+                    >t</span
+                  >
+                </h3>
+                <p>
+                  702 E. Lake View Rd <br />
+                  Syracuse, IN 46567 <br />
+                </p>
+                <p>
+                  <a href="tel:1-574-457-7100" class="a-inverse"
+                    >(574) 457-7100</a
+                  >
+                  <br />
+                  <a
+                    href="http://oakwoodresort.com"
+                    target="blank"
+                    class="a-inverse"
+                    >oakwoodresort.com</a
+                  >
+                </p>
+              </div>
             </div>
           </div>
 

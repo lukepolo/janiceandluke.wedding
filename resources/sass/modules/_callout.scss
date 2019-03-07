@@ -7,15 +7,13 @@
   justify-content: center;
   align-items: center;
   color: rgba($color-text-inverse-primary, 0.6);
+  text-align: center;
   letter-spacing: 2px;
   background-color: $color-accent-dark;
   box-shadow: -30px 30px 0 $color-accent-lightest;
   padding: 30px;
 
-  h1,
-  h2,
-  h3,
-  h4 {
+  h3:not(.primary) {
     text-transform: uppercase;
     font-weight: 300;
     margin: 0 0 40px;

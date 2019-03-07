@@ -18,8 +18,8 @@
     color: $color-text-inverse-primary;
     letter-spacing: 2px;
     background-color: $color-accent-light;
-    margin: 0 -10px;
-    padding: 20px 40px;
+    margin: 0 -20px;
+    padding: 0 30px 30px;
 
     h3 {
       margin-top: 0;
@@ -28,14 +28,9 @@
     p {
       margin-bottom: 0;
     }
-  }
 
-  &--img {
-    flex: 1 1 380px;
-    margin: 0 20px -5px;
-
-    img {
-      border-top-left-radius: 190px 160px;
+    .gradient {
+      margin: 0 -30px;
     }
   }
 }
@@ -49,10 +44,6 @@
 
     &--callout {
       font-size: 0.8em;
-    }
-
-    &--img img {
-      border-top-left-radius: 80px 80px;
     }
   }
 }
