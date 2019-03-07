@@ -54,6 +54,7 @@ $flyform-transition: all 0.5s;
     font-size: $flyform-font-size;
     border: 1px solid $flyform-color-divider;
     border-top: none;
+    border-radius: 0;
     padding: $flyform-spacing/4 $flyform-spacing/2;
 
     &:focus {
