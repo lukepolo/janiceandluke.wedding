@@ -49,3 +49,20 @@
     background-color: $color-state-danger !important;
   }
 }
+
+@include breakpoint(sm) {
+  .alerts {
+    position: fixed;
+    bottom: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    top: auto !important;
+    width: auto !important;
+
+    .alert {
+      margin: 0;
+      width: 100%;
+      border-radius: 0;
+    }
+  }
+}
