@@ -75,8 +75,16 @@ class GuestImport implements ToCollection
             'is_guest' => $isGuest,
             'allowed_guest' => $allowedGuest,
             'allowed_rehearsal_dinner' => $allowedRehearsalDinner,
-            'guest_id' => !empty($connectedGuest) ? $connectedGuest->id : null,
         ]);
+
+        if (empty($guest->guest_id) || $guest->first_name !== '+1') {
+            $guest->fill([
+                'guest_id' => !empty($connectedGuest) ? $connectedGuest->id : null,
+            ]);
+        }
+
+        $guest->save();
+
 
         if (!$invited) {
             $guest->delete();
