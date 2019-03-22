@@ -66,13 +66,16 @@ class GuestImport implements ToCollection
 
     private function createGuest($firstName, $lastName, $allowedGuest, $allowedRehearsalDinner, $invited, Guest $connectedGuest = null, $isGuest = false)
     {
-        $guest = Guest::withTrashed()->create([
+        $guest = Guest::withTrashed()->firstOrCreate([
             'last_name' => $lastName,
             'first_name' => $firstName,
+        ]);
+
+        $guest->update([
+            'is_guest' => $isGuest,
             'allowed_guest' => $allowedGuest,
             'allowed_rehearsal_dinner' => $allowedRehearsalDinner,
             'guest_id' => !empty($connectedGuest) ? $connectedGuest->id : null,
-            'is_guest' => $isGuest,
         ]);
 
         if (!$invited) {
