@@ -62,26 +62,37 @@ class GuestImport implements ToCollection
                 }
             }
         }
+        Guest::with('guest')->where('first_name', "+1")->get()->each(function ($guest) {
+            if (!empty($guest) && $guest->id !== $guest->guest->guest_id) {
+                $guest->delete();
+            }
+        });
     }
 
     private function createGuest($firstName, $lastName, $allowedGuest, $allowedRehearsalDinner, $invited, Guest $connectedGuest = null, $isGuest = false)
     {
-        $guest = Guest::withTrashed()->firstOrCreate([
-            'last_name' => $lastName,
-            'first_name' => $firstName,
-        ]);
+        if ($firstName === '+1') {
+            $guest = Guest::withTrashed()->firstOrCreate([
+               'last_name' => $lastName,
+               'first_name' => $firstName,
+               'guest_id' => !empty($connectedGuest) ? $connectedGuest->id : null,
+           ]);
+        } else {
+            $guest = Guest::withTrashed()->firstOrCreate([
+               'last_name' => $lastName,
+               'first_name' => $firstName,
+           ]);
 
-        $guest->update([
-            'is_guest' => $isGuest,
-            'allowed_guest' => $allowedGuest,
-            'allowed_rehearsal_dinner' => $allowedRehearsalDinner,
-        ]);
-
-        if (empty($guest->guest_id) || $guest->first_name !== '+1') {
             $guest->fill([
                 'guest_id' => !empty($connectedGuest) ? $connectedGuest->id : null,
             ]);
         }
+
+        $guest->fill([
+            'is_guest' => $isGuest,
+            'allowed_guest' => $allowedGuest,
+            'allowed_rehearsal_dinner' => $allowedRehearsalDinner,
+        ]);
 
         $guest->save();
 
